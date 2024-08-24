@@ -16,4 +16,7 @@ Link to the GitLab repository of the original project:
 5. Clone the project from GitLab: ``git clone https://gitlab.xiph.org/xiph/rnnoise.git``<br>
 6. Compile the project:<br>
    6.1. ``sudo apt-get install autoconf automake libtool build-essential``<br>
+   6.2. ``./autogen.sh``<br>
+   6.3. ``./configure``<br>
+   6.4. ``make``<br>
    
