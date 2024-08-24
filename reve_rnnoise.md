@@ -8,5 +8,8 @@ Link to the GitLab repository of the original project:
 # Set up steps:
 1. Clone the repository from GitLab.<br>
    ``https://gitlab.xiph.org/xiph/rnnoise.git``<br>
-2. Type Windows PowerShell in the search bar.
-3. Right-click on Windows PowerShell and select **Run as administrator**.
+2. Type Windows PowerShell in the search bar.<br>
+3. Right-click on Windows PowerShell and select **Run as administrator**.<br>
+4. ``wsl --install``<br>
+5. Restart your PC and provide a username and password.<br>
+6. ``sudo apt-get update``<br>
