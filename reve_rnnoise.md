@@ -14,5 +14,7 @@ Link to the GitLab repository of the original project:
    3.2. ``wsl --install``<br>
    3.3. Restart your PC and provide a username and password.<br>
    3.4. ``sudo apt-get update``<br>
-   3.5. Go to the directory where you cloned the project: ``cd /mnt/d/projects/rnnoise``.<br>
+   3.5. Go to the directory where you cloned the project: ``cd /mnt/d/projects/rnnoise``<br>
+4. Compile the project:<br>
+   4.1. ``sudo apt-get install autoconf automake libtool build-essential``<br>
    
