@@ -19,4 +19,8 @@ Link to the GitLab repository of the original project:
    6.2. ``./autogen.sh``<br>
    6.3. ``./configure``<br>
    6.4. ``make``<br>
+   6.5. In the **rnnoise** directory place a audio file (.raw, 48khz)<br>
+   6.6. ``./examples/rnnoise_demo fuji1_48k.raw fuji1_48k_output.raw``<br>
+   6.7. Output audio file (.raw, 48khz) will be generated in the **rnnoise** folder.<br>
+
    
