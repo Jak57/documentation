@@ -6,15 +6,14 @@ Link to the GitLab repository of the original project:
 ``https://gitlab.xiph.org/xiph/rnnoise``<br>
 
 # Set up steps:
-1. Clone the repository from GitLab.<br>
-   ``https://gitlab.xiph.org/xiph/rnnoise.git``<br>
+1. Setting up WSL (Windows Subsystem for Linux).<br>
 2. Type Windows PowerShell in the search bar.<br>
-3. Setting up WSL (Windows Subsystem for Linux).<br>
-   3.1. Right-click on Windows PowerShell and select **Run as administrator**.<br>
-   3.2. ``wsl --install``<br>
-   3.3. Restart your PC and provide a username and password.<br>
-   3.4. ``sudo apt-get update``<br>
-   3.5. Go to the directory where you cloned the project: ``cd /mnt/d/projects/rnnoise``<br>
-4. Compile the project:<br>
-   4.1. ``sudo apt-get install autoconf automake libtool build-essential``<br>
+   2.1. Right-click on Windows PowerShell and select **Run as administrator**.<br>
+   2.2. ``wsl --install``<br>
+   2.3. Restart your PC and provide a username and password.<br>
+   2.4. ``sudo apt-get update``<br>
+4. Go to the directory where you want to clone the project: ``cd /mnt/d/projects/``<br>
+5. Clone the project from GitLab: ``git clone https://gitlab.xiph.org/xiph/rnnoise.git``<br>
+6. Compile the project:<br>
+   6.1. ``sudo apt-get install autoconf automake libtool build-essential``<br>
    
