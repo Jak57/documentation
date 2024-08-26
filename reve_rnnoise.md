@@ -27,5 +27,14 @@ Link to the GitLab repository of the original project:
 1. From the **rnnoise** directory type the command: ``./dump_weights_blob``<br>
 2. ``weights_blob.bin`` will be generated in the ``rnnoise`` directory.<br>
    
+# Creating .lib file 
+* Tool used: Microsoft Visual Studio 2022
+## Steps
+1. Create a new project
+2. Search for .lib in the search bar
+3. Select **Static Library**
+4. Provide project name: ``rnnoiselib``
+5. Select ``Create``.
+  After this step, a new project will be created.
 
    
