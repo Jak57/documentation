@@ -10,6 +10,7 @@ Link to the GitHub repository of the original project:
 Link to the GitLab repository of the original project: 
 ``https://gitlab.xiph.org/xiph/rnnoise``<br>
 
+---
 ## Set up steps
 
 1. Setting up WSL (Windows Subsystem for Linux).<br>
@@ -29,10 +30,12 @@ Link to the GitLab repository of the original project:
    5.6. ``./examples/rnnoise_demo fuji1_48k.raw fuji1_48k_output.raw``<br>
    5.7. Output audio file (.raw, 48khz) will be generated in the **rnnoise** folder.<br>
 
+---
 ## bin format of the model
 1. From the **rnnoise** directory type the command: ``./dump_weights_blob``<br>
 2. ``weights_blob.bin`` will be generated in the ``rnnoise`` directory.<br>
-   
+
+---
 ## Creating lib file 
 * Tool used: Microsoft Visual Studio 2022
 ## Steps
@@ -76,8 +79,9 @@ Link to the GitLab repository of the original project:
 10. ``Build`` -> ``Clean Solution`` -> ``Build Solution``.
 11. ``rnnoiselib.lib`` file will be generated in ``rnnoiselib/x64/Release``.
 
+---
 ## Creating dll file
-hi
+
    
    
 
