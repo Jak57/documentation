@@ -1,13 +1,13 @@
 # Instructions for running the RNNoise project
 
-[Running the RNNoise](#set-up-steps:)
+[Running the RNNoise](#set-up-steps)
 
 Link to the GitHub repository of the original project: 
 ``https://github.com/xiph/rnnoise``<br>
 Link to the GitLab repository of the original project: 
 ``https://gitlab.xiph.org/xiph/rnnoise``<br>
 
-## Set up steps:
+## Set up steps
 
 1. Setting up WSL (Windows Subsystem for Linux).<br>
 2. Type Windows PowerShell in the search bar.<br>
