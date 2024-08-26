@@ -43,7 +43,8 @@ Link to the GitLab repository of the original project:
    1.3. Select ``Remove``.<br>
 2. Select ``Release`` in ``Solution Configurations`` and ``x64`` in ``Solution Platforms``.
 3. Right-click on ``rnnoiselib`` and select ``Properties`` -> ``Configuration Properties`` -> ``C/C++`` -> ``Precompiled Headers`` -> ``Precompiled Header`` -> ``Not Using Precompiled Headers`` -> ``Apply`` -> ``Ok``.
-2. Copy the **rnnoise** directory into the **\rnnoiselib\rnnoiselib** directory.
+2. From the ``rnnoise/src`` folder copy all the ``.c``, ``.h`` and ``x64`` folder into ``rnnoiselib/rnnoiselib`` folder.
+3. From the ``rnnoise/include`` directory copy the ``.h`` file into ``rnnoiselib/rnnoiselib`` directory.
    
 
    
