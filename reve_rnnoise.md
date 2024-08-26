@@ -41,6 +41,8 @@ Link to the GitLab repository of the original project:
    1.1. Expand the folder.<br>
    1.2. Right-click on the file name which you want to remove.<br>
    1.3. Select ``Remove``.<br>
+2. Select ``Release`` in ``Solution Configurations`` and ``x64`` in ``Solution Platforms``.
+3. Right-click on ``rnnoiselib`` and select ``Properties`` -> ``Configuration Properties`` -> ``C/C++`` -> ``Precompiled Headers`` -> ``Precompiled Header`` -> ``Not Using Precompiled Headers`` -> ``Apply`` -> ``Ok``.
 2. Copy the **rnnoise** directory into the **\rnnoiselib\rnnoiselib** directory.
    
 
