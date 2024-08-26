@@ -36,5 +36,12 @@ Link to the GitLab repository of the original project:
 4. Provide project name: ``rnnoiselib``
 5. Select ``Create``.
   After this step, a new project will be created.
+## Setting up project:
+1. Remove all the existing files from the ``Header Files`` and ``Source Files`` directories.<br>
+   1.1. Expand the folder.<br>
+   1.2. Right-click on the file name which you want to remove.<br>
+   1.3. Select ``Remove``.<br>
+2. Copy the **rnnoise** directory into the **\rnnoiselib\rnnoiselib** directory.
+   
 
    
