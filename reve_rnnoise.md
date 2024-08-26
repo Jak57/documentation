@@ -47,6 +47,31 @@ Link to the GitLab repository of the original project:
 5. From the ``rnnoise/include`` directory copy the ``.h`` file into ``rnnoiselib/rnnoiselib`` directory.
 6. Right-click on the ``Source Files`` directory: ``Add`` -> ``Existing Items``.
 7. Select the ``.c`` files: ``celt_lpc.c denoise.c kiss_fft.c nnet.c nnet_default.c parse_lpcnet_weights.c pitch.c rnn.c rnnoise_data.c rnnoise_tables.c``
+8. Right-click on the ``Header Files`` directory: ``Add`` -> ``Existing Items``.
+9. Select the ``.h`` files:<br>
+   9.1. ``_kiss_fft_guts.h``<br>
+   9.2. ``arch.h ``<br>
+   9.3. ``celt_lpc.h``<br>
+   9.4. ``common.h``<br>
+   9.5. ``cpu_support.h``<br>
+   9.6. ``denoise.h``<br>
+   9.7. ``kiss_fft.h``<br>
+   9.8. ``nnet.h``<br>
+   9.9. ``nnet_arch.h``<br>
+   9.10. ``opus_types.h``<br>
+   9.11. ``pitch.h``<br>
+   9.12. ``rnn.h``<br>
+   9.13. ``rnnoise_data.h``<br>
+   9.14. ``rnnoise_data_little.h``<br>
+   9.15. ``vec.h``<br>
+   9.16. ``vec_avx.h``<br>
+   9.17. ``vec_neon.h``<br>
+   9.18. ``rnnoise.h``<br>
+10. ``Build`` -> ``Clean Solution`` -> ``Build Solution``.
+11. ``rnnoiselib.lib`` file will be generated in ``rnnoiselib/x64/Release``.
+
+
+   
    
 
    
