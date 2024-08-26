@@ -3,9 +3,7 @@
 * [Running the RNNoise](#set-up-steps)
 * [Generating the .BIN format of the model](#bin-format-of-the-model)
 * [Creating .lib file](#creating-lib-file)
-* [Creating .dll file](#set-up-steps)
-
-
+* [Creating .dll file](#creating-dll-file)
 
 Link to the GitHub repository of the original project: 
 ``https://github.com/xiph/rnnoise``<br>
@@ -78,7 +76,7 @@ Link to the GitLab repository of the original project:
 10. ``Build`` -> ``Clean Solution`` -> ``Build Solution``.
 11. ``rnnoiselib.lib`` file will be generated in ``rnnoiselib/x64/Release``.
 
-## setup
+## Creating dll file
 hi
    
    
