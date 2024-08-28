@@ -120,6 +120,7 @@ Link to the GitLab repository of the original project:
           
     12.2. Right-click on ``rnnoisedll`` -> ``Properties`` -> ``Configuration Properties`` -> ``Linker`` -> ``Input`` -> ``Additional Dependencies`` -> ``Edit``<br>
     12.3. Add ``rnnoiselib.lib``-> ``Ok`` -> ``Apply`` -> ``Ok``.<br.
+13. ``Clean Solution`` -> ``Build Solution`` -> dll will be created.
   
    
    
