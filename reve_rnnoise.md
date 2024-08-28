@@ -102,7 +102,7 @@ Link to the GitLab repository of the original project:
    7.3. ``rnnoise\include``<br>
    7.4. `C:\Users\Reve_207\source\repos\rnnoisedll\rnnoisedll\rnnoise\src``<br>
 8. ``Ok`` -> ``Apply`` -> ``Ok``
-9. 
+9. Write the C/C++ file and add it to the ``Source Files`` directory.
   
    
    
