@@ -113,6 +113,13 @@ Link to the GitLab repository of the original project:
 9. ``Ok`` -> ``Apply`` -> ``Ok``
 10. Write the C/C++ file and add it to the ``Source Files`` directory.
 11. Place the ``rnnoiselib.lib`` file in ``rnnoisedll\rnnoisedll\rnnoise\x64\release``.
+12. Adding the ``.lib`` file.<br>
+   12.1. Right-click on ``rnnoisedll`` -> ``Properties`` -> ``Configuration Properties`` -> ``Linker`` -> ``General`` -> ``Additional Library Directories`` ->
+         ``Edit``<br>
+          Add: ``rnnoise\x64\release`` -> ``Ok`` -> ``Apply`` -> ``Ok``.<br>
+          
+    12.2. Right-click on ``rnnoisedll`` -> ``Properties`` -> ``Configuration Properties`` -> ``Linker`` -> ``Input`` -> ``Additional Dependencies`` -> ``Edit``<br>
+    12.3. Add ``rnnoiselib.lib``-> ``Ok`` -> ``Apply`` -> ``Ok``.<br.
   
    
    
