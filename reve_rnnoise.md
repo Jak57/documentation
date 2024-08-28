@@ -100,7 +100,7 @@ Link to the GitLab repository of the original project:
    7.1. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include``<br>
    7.2. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32``<br>
    7.3. ``rnnoise\include``<br>
-   7.4. `C:\Users\Reve_207\source\repos\rnnoisedll\rnnoisedll\rnnoise\src``<br>
+   7.4. ``C:\Users\Reve_207\source\repos\rnnoisedll\rnnoisedll\rnnoise\src``<br>
 9. ``Ok`` -> ``Apply`` -> ``Ok``
 10. Write the C/C++ file and add it to the ``Source Files`` directory.
   
