@@ -81,7 +81,28 @@ Link to the GitLab repository of the original project:
 
 ---
 ## Creating dll file
-
+* Tool: Microsoft Visual Studio 2022
+# Steps
+1. ``Create a new project`` -> ``Dynamic-Link Library (DLL)``
+2. Provide name: ``rnnoisedll`` -> ``Create``
+   A new project will be created.
+3. Creating ``.h`` file from the ``java`` code<br>
+  3.1. Write the ``native methods``<br>
+  3.2. Comment out all the ``import`` statements and ``dll`` loading statements from the ``java`` file.<br>
+  3.3. In the command line terminal go to the exact location of the ``java`` file.<br>
+  3.4. Run ``javac -h . RNNoise.Java``<br>
+      The header file will be created in the same directory as the Java file.<br>
+4. Copy the header file ``com_reve_audio_libraries_dlls_audio_filters_rnnoise_RNNoiseNS.h`` in the ``/rnnoisedll/rnnoisedll`` directory.
+5. Right-click on the ``Header Files`` folder of ``rnnoisedll``: ``Add`` -> ``Existing Item`` -> then choose the header file.
+6. Copy ``rnnoise`` folder into ``rnnoisedll/rnnoisedll``.
+7. Right-click on ``rnnoisedll`` -> ``Properties`` -> ``Configuration Properties`` -> ``C/C++`` -> ``General`` -> ``Additional Include Directories`` -> ``Edit``.
+   Add the following items here:
+   7.1. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include``<br>
+   7.2. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32``<br>
+   7.3. ``rnnoise\include``<br>
+   7.4. ``C:\Users\Reve_207\source\repos\rnn_filters\rnn_filters\rnnoise\src``<br>
+  
+   
    
    
 
