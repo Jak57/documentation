@@ -84,14 +84,22 @@ Link to the GitLab repository of the original project:
 * Tool: Microsoft Visual Studio 2022
 # Steps
 1. ``Create a new project`` -> ``Dynamic-Link Library (DLL)``
-2. Provide name: ``rnnoisedll`` -> ``Create``
-   A new project will be created. Choose ``Release`` and ``x64`` as ``Solution Configurations and Platforms``.
-4. Creating ``.h`` file from the ``java`` code<br>
+2. Provide name: ``rnnoisedll`` -> ``Create``<br>
+   A new project will be created. Choose ``Release`` and ``x64`` as ``Solution Configurations and Platforms``.<br>
+   
+   2.1. Remove all the existing files from the ``Header Files`` and ``Source Files`` directories.<br>
+   2.2. Expand the folder.<br>
+   2.3. Right-click on the file name which you want to remove.<br>
+   2.4. Select ``Remove``.<br>
+   2.5. Right-click on ``rnnoiselib`` and select ``Properties`` -> ``Configuration Properties`` -> ``C/C++`` -> ``Precompiled Headers`` -> ``Precompiled Header`` -> ``Not Using Precompiled Headers`` -> ``Apply`` -> ``Ok``.<br>
+   
+3. Creating ``.h`` file from the ``java`` code<br>
   3.1. Write the ``native methods``<br>
   3.2. Comment out all the ``import`` statements and ``dll`` loading statements from the ``java`` file.<br>
   3.3. In the command line terminal go to the exact location of the ``java`` file.<br>
   3.4. Run ``javac -h . RNNoise.Java``<br>
       The header file will be created in the same directory as the Java file.<br>
+      
 5. Copy the header file ``com_reve_audio_libraries_dlls_audio_filters_rnnoise_RNNoiseNS.h`` in the ``/rnnoisedll/rnnoisedll`` directory.
 6. Right-click on the ``Header Files`` folder of ``rnnoisedll``: ``Add`` -> ``Existing Item`` -> then choose the header file.
 7. Copy ``rnnoise`` folder into ``rnnoisedll/rnnoisedll``.
@@ -101,6 +109,7 @@ Link to the GitLab repository of the original project:
    7.2. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32``<br>
    7.3. ``rnnoise\include``<br>
    7.4. ``C:\Users\Reve_207\source\repos\rnnoisedll\rnnoisedll\rnnoise\src``<br>
+   
 9. ``Ok`` -> ``Apply`` -> ``Ok``
 10. Write the C/C++ file and add it to the ``Source Files`` directory.
   
