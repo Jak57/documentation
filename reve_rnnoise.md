@@ -96,11 +96,13 @@ Link to the GitLab repository of the original project:
 5. Right-click on the ``Header Files`` folder of ``rnnoisedll``: ``Add`` -> ``Existing Item`` -> then choose the header file.
 6. Copy ``rnnoise`` folder into ``rnnoisedll/rnnoisedll``.
 7. Right-click on ``rnnoisedll`` -> ``Properties`` -> ``Configuration Properties`` -> ``C/C++`` -> ``General`` -> ``Additional Include Directories`` -> ``Edit``.
-   Add the following items here:
+   Add the following items here:<br>
    7.1. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include``<br>
    7.2. ``C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32``<br>
    7.3. ``rnnoise\include``<br>
-   7.4. ``C:\Users\Reve_207\source\repos\rnn_filters\rnn_filters\rnnoise\src``<br>
+   7.4. `C:\Users\Reve_207\source\repos\rnnoisedll\rnnoisedll\rnnoise\src``<br>
+8. ``Ok`` -> ``Apply`` -> ``Ok``
+9. 
   
    
    
