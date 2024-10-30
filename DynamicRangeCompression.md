@@ -91,5 +91,9 @@ With the optimal configuration, we applied the DRC algorithm to the [input audio
     <span>Fig: Output image</span>
 </p>
 
-From these figures it is evident that after applying the DRC algorithm the loudest peaks of the audio are compressed ensuring a smooth transition of voice level.
+From these figures, it is evident that after applying the DRC algorithm the loudest peaks of the audio are compressed ensuring a smooth transition of voice level.
+
+## References
+1. Digital Dynamic Range Compressor Design — A Tutorial and Analysis (Paper - 2012)
+   * https://www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf
   
