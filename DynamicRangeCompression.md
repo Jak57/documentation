@@ -32,6 +32,9 @@ In our case, we are working with raw audio with the following properties:
 
 </div>
 
-As we are working with ``16-bit`` signed numbers, the highest number we can represent is ``32786``. For measuring decibel full-scale value (dbFS) from the amplitudes, they must be normalized by this upped limit at first. The formula for measuring decibel full-scale value from the amplitude value of audio sample is provided below.
+As we are working with ``16-bit`` signed numbers, the highest number we can represent is ``32786``. For measuring decibel full-scale value (dbFS) from the amplitudes, they must be normalized by this upper limit. The formula for measuring the decibel full-scale value from the amplitude value of an audio sample is provided below.
 
+<p align="center">
+    <img src="images/amplitude_to_db.png" alt="Project Logo" width="200" height="60">
+</p>
 
