@@ -90,4 +90,6 @@ With the optimal configuration, we applied the DRC algorithm to the [input audio
     <img src="images/output_drc.png" alt="Project Logo" width="500" height="250"><br>
     <span>Fig: Output image</span>
 </p>
+
+From these figures it is evident that after applying the DRC algorithm the loudest peaks of the audio are compressed ensuring a smooth transition of voice level.
   
