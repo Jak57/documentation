@@ -35,6 +35,15 @@ In the acoustic feedback loop, the sound that is played by the speaker is picked
 * As we process audio chunks of 60ms, at first using Sinc interpolation we generate 1600 samples from 960 samples.
 * Then frequency shifting is applied to this interpolated signal and finally, the resulting signal is downsampled to 960 samples.
 
+**Sinc Filter**
+For resampling Sinc filter is used which has a maximum value of 1 at index 0 and decades gradually on both ends. The formula of the Sinc filter is provided below.
+
+<p align="center">
+    <img src="images/sinc.png" alt="Project Logo" width="180" height="60">
+</p>
+
+The below figure shows the shape of the Sinc filter. 
+
 ------------------------------------------------------------------------------------
 For shifting frequency by a small amount, we use the Hilbert transformer.
 
