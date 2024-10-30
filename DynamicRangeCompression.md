@@ -55,16 +55,39 @@ We have applied the DRC algorithm to raw audio with the previously specified aud
 * Threshold (T): ``-15 dbFS``
 * Ratio (R): ``2``
 
+## Pseudocode
+
+```
+def amplitudeTodB(amplitude):
+    return (20 * log10(amplitude / 32768.0))
+
+def dBToAmplitude(db):
+    return (32767 * 10^(db / 20))
+
+def dynamicRangeCompression(audio):
+    threshold = -15
+    ratio = 2
+    N = LEN(audio)
+
+    for i = 0 to N-1:
+        amplitude = audio[i]
+        if amplitude == 0:
+            continue
+        db = amplitudeTodB(amplitude)
+        if db > threshold:
+            audio[i] = dBToAmplitude(db)
+```
+
 ## Real-time Example
 With the optimal configuration, we applied the DRC algorithm to the input audio and generated the output audio. The below images visualize the input and output audio signals.
 
 <p align="center">
     <img src="images/input_drc.png" alt="Project Logo" width="500" height="250"><br>
-    <span>Fig: Input Image</span>
+    <span>Fig: Input image</span>
 </p>
 
 <p align="center">
     <img src="images/output_drc.png" alt="Project Logo" width="500" height="250"><br>
-    <span>Fig: Output Image</span>
+    <span>Fig: Output image</span>
 </p>
   
