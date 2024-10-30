@@ -79,7 +79,7 @@ def dynamicRangeCompression(audio):
 ```
 
 ## Real-time Example
-With the optimal configuration, we applied the DRC algorithm to the input audio and generated the output audio. The below images visualize the input and output audio signals.
+With the optimal configuration, we applied the DRC algorithm to the [input audio](audio/drc_input.raw) and generated the [output audio](audio/drc_output.raw). The below images visualize the input and output audio signals.
 
 <p align="center">
     <img src="images/input_drc.png" alt="Project Logo" width="500" height="250"><br>
