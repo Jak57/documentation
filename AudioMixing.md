@@ -56,9 +56,15 @@ def trueMixer(audios):
 ```
 def findMixedRMS(mixer):
     N = LEN(mixer)
-    for i = 0 to N-1:
-        s += (mixer[i] * mixer[i])
-    return SQRT(s / N)
+    M = 960
+    k = 0
+
+    for idx = 0, idx < N-1, idx += M:
+        s = 0
+        for i = 0 to N-1:
+            s += (mixer[i + idx] * mixer[i + idx])
+        denominator[k++] = SQRT(s / N)
+    return denominator
 
 def findInputRMS(audios):
     N = findMaxAudioLen(audios)
@@ -85,7 +91,15 @@ def alignToRMS(audios):
     denominator = findMixedRMS(mixer)
 
     N = LEN(mixer)
-    N = 
+    M = 960
+    k = 0
+
+    for i = 0, i < N, i += 960:
+        lambda = nominator[k] / denominator[k]
+        for j = 0 to M - 1:
+            mixer[i + j] *= lambda
+        k++;
+    return mixer
 
 ```
 
