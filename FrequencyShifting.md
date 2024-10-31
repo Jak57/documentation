@@ -81,11 +81,27 @@ def sincUpSample(audio, targetSize):
         position = i / ratio
         leftIndex = FLOOR(position)
 
-        for j = leftIndex - 64 to leftIndex + 64 - 1:
+        for j = leftIndex - 64 to leftIndex + 64:
             if j >= 0 and j < originalSize:
                 sum += (audio[j] * sinc(position - j))
         upsample[i] = sum
     return upsample
+
+
+def sincDownSample(upsample, originalSize):
+    targetSize = LEN(upsample)
+    ratio = targetSize / originalSize
+
+    for i = 0 to originalSize - 1:
+        sum = 0
+        position = i * ratio
+        leftIndex = FLOOR(position)
+
+        for j = leftIndex - 64 to leftIndex + 64:
+            if j >= 0 and j < targetSize:
+                sum += (upsample[j] * sinc(position - j))
+        audio[i] = sum
+    return audio
 
 ```
 ------------------------------------------------------------------------------------
