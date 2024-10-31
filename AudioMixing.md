@@ -51,11 +51,43 @@ def trueMixer(audios):
     return mixer
 ```
 
+## Pseudocode of calculating mixed<sub>rms</sub> and input<sub>rms</sub>
+
+```
+def findMixedRMS(mixer):
+    N = LEN(mixer)
+    for i = 0 to N-1:
+        s += (mixer[i] * mixer[i])
+    return SQRT(s / N)
+
+def findInputRMS(audios):
+    N = findMaxAudioLen(audios)
+    M = LEN(audios)
+    
+    for i = 0 to N-1:
+        s = 0
+        for j = 0 to M-1:
+            s += (audios[j][i] * audios[j][i])
+        sumOfSqr[i] = s
+
+    nominator = findMixedRMS(sumOfSqr)
+    return nominator
 
 
+```
 
+## Pseudocode of Align-to-RMS weighted algorithm
 
+```
+def alignToRMS(audios):
+    mixer = trueMixer(audios)
+    nominator = findInputRMS(audios)
+    denominator = findMixedRMS(mixer)
 
+    N = LEN(mixer)
+    N = 
+
+```
 
 
 
