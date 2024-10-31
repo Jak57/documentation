@@ -59,7 +59,7 @@ We have applied the DRC algorithm to raw audio with the previously specified aud
 
 ```
 def amplitudeTodB(amplitude):
-    return (20 * log10(amplitude / 32768.0))
+    return (20 * log10(ABS(amplitude) / 32768.0))
 
 def dBToAmplitude(db):
     return (32767 * 10^(db / 20))
@@ -75,7 +75,7 @@ def dynamicRangeCompression(audio):
             continue
         db = amplitudeTodB(amplitude)
         if db > threshold:
-            audio[i] = dBToAmplitude(db)
+            audio[i] = SIGN(amplitude) * dBToAmplitude(db)
 ```
 
 ## Real-time Example
