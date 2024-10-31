@@ -29,6 +29,22 @@ In the acoustic feedback loop, the sound that is played by the speaker is picked
 3. The above multiplication resulted in the shifted frequency spectrum by f<sub>s</sub> amount.
 4. The real part of this signal is the final shifted version in the time domain.
 
+**Pseudocode of Hilbert Transformation**
+```
+def hilbertTransformation(audio):
+    N = LEN(audio)
+    audioFFT[] = FFT(audio)
+    for i = 0 to N/2 - 1:
+        audioFFT[i] *= 2
+
+    for i = N/2 to N - 1:
+        audioFFT[i] = 0
+
+    analyticalSignal = IFFT(audioFFT)
+    return analyticalSignal
+    
+```
+
 ## Observations
 * When applying the frequency shifting on an audio chunk of duration 60ms (``960 samples``), some artifacts are added in the frequency-shifted audio.
 * For audio chunks of duration multiples of 100ms (``1600 samples``), frequency shifting does not introduce any artifacts.
@@ -44,6 +60,34 @@ For resampling Sinc filter is used which has a maximum value of 1 at index 0 and
 
 The below figure shows the shape of the Sinc filter. 
 
+<p align="center">
+    <img src="images/sinc_shape.png" alt="Project Logo" width="500" height="200">
+</p>
+
+**Pseudocode for Sinc filter, Up and Down sampling using Sinc filter**
+```
+def sinc(x):
+    if x == 0:
+        return 1
+    return sin(PI * x) / (PI * x)
+
+
+def sincUpSample(audio, targetSize):
+    originalSize = LEN(audio)
+    ratio = targetSize / originalSize
+
+    for i = 0 to targetSize - 1:
+        sum = 0
+        position = i / ratio
+        leftIndex = FLOOR(position)
+
+        for j = leftIndex - 64 to leftIndex + 64 - 1:
+            if j >= 0 and j < originalSize:
+                sum += (audio[j] * sinc(position - j))
+        upsample[i] = sum
+    return upsample
+
+```
 ------------------------------------------------------------------------------------
 For shifting frequency by a small amount, we use the Hilbert transformer.
 
