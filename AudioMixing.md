@@ -28,6 +28,37 @@ The formula of the Align-to-RMS weighted audio mixing algorithm is provided belo
     Y<sub>rms</sub> = Y<sub>true_mixer</sub> * (input<sub>rms</sub> / mixed<sub>rms</sub>)
 </div>
 
+
+## Pseudocode of True Mixer
+    
+```
+def findMaxAudioLen(audios):
+    maxLen = 0
+    for audio in audios:
+        maxLen = MAX(maxLen, LEN(audio))
+    return maxLen
+
+def trueMixer(audios):
+    N = findMaxAudioLen(audios)
+    M = LEN(audios)
+
+    for i = 0 to N-1:
+        sum = 0
+        for j = 0 to M-1:
+            sum += audios[j][i]
+
+        mixer[i] = sum
+    return mixer
+```
+
+
+
+
+
+
+
+
+
 -------------------------------
 
 Audio signals are composed of sinusoids with different frequencies. In frequency shifting, the entire frequency spectrum of an audio signal is shifted upward or downward by a specified frequency shift amount. It is used in the Acoustic Feedback Loop Suppression problem. 
