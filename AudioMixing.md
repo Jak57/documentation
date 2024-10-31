@@ -1,4 +1,34 @@
-# Frequency Shifting
+## Audio Mixing
+
+In real-time audio conferencing when multiple participants speak simultaneously, their voices need to be mixed and played to the receiver. Thus the received voice file contains only voices from all participants except the receiver's voice. Efficient mixing of participant voices is crucial to ensure clarity, loudness as well as smoothness of voice level. There are many algorithms for mixing audio such as:
+* Summation
+* Align-to-Average weighted
+* Align-to-Greatest weighted
+* Align-to-Weakest weighted
+* Align-to-Self weighted
+* Algin-to-RMS weighted
+
+Experimentations with different audio files reveal that Align-to-RMS weighted is the optimal choice for mixing audio when working with audio chunks of duration 60ms (960 samples).
+
+## Align-to-RMS weighted algorithm
+1. All the audios are summed to generate a true mixer output. The figure below shows the formula of a true mixer output.
+<p align="center">
+    <img src="images/true_mixer.png" alt="Project Logo" width="220" height="80">
+</p>
+
+2. For every chunk of 960 samples the root mean square (RMS) value is calculated and stored.
+
+3. Every audio chunk of 960 samples from each participant is collected and their RMS value is calculated and stored.
+
+4. The ratio of RMS value from steps 3 and 2 is measured and multiplied by the true mixer output for the particular audio chunk. This generates the mixed audio.
+
+The formula of the Align-to-RMS weighted audio mixing algorithm is provided below:
+
+<div align="center">
+    Y<sub>rms</sub> = Y<sub>true_mixer</sub> * (input<sub>rms</sub> / mixed<sub>rms</sub>)
+</div>
+
+-------------------------------
 
 Audio signals are composed of sinusoids with different frequencies. In frequency shifting, the entire frequency spectrum of an audio signal is shifted upward or downward by a specified frequency shift amount. It is used in the Acoustic Feedback Loop Suppression problem. 
 
