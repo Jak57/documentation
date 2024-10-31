@@ -133,7 +133,19 @@ We applied Frequency Shifting to the raw audio file sampled at 16000 Hz. Optimal
 * window<sub>size</sub>: ``129`` (-64 to +64)
 
 ## Real-time Example
-With the optimal configuration, we applied the Frequency Shifting algorithm to the [input audio](audio/fs_input.raw) and generated the [output audio](audio/fs_output.raw). 
+With the optimal configuration, we applied the Frequency Shifting algorithm to the [input audio](audio/fs_input.raw) and generated the [output audio](audio/fs_output.raw). The images below visualize the input and output of audio signals in the frequency domain with a frequency shift amount of 10 Hz.
+
+<p align="center">
+    <img src="images/fs_input.png" alt="Project Logo" width="500" height="250"><br>
+    <span>Fig: Input image</span>
+</p>
+
+<p align="center">
+    <img src="images/fs_output.png" alt="Project Logo" width="500" height="250"><br>
+    <span>Fig: Output image</span>
+</p>
+
+From these figures, it is evident that after applying the Frequency Shifting algorithm the frequencies are moved upward by 10 Hz.
 
 ## References
 1. FREQUENCY SHIFTING FOR ACOUSTIC HOWLING SUPPRESSION (Paper - 2010)
