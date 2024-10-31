@@ -1,4 +1,4 @@
-## Frequency Shifting
+# Frequency Shifting
 
 Audio signals are composed of sinusoids with different frequencies. In frequency shifting, the entire frequency spectrum of an audio signal is shifted upward or downward by a specified frequency shift amount. It is used in the Acoustic Feedback Loop Suppression problem. 
 
@@ -45,13 +45,13 @@ def hilbertTransformation(audio):
     
 ```
 
-## Observations
+**Observations**
 * When applying the frequency shifting on an audio chunk of duration 60ms (``960 samples``), some artifacts are added in the frequency-shifted audio.
 * For audio chunks of duration multiples of 100ms (``1600 samples``), frequency shifting does not introduce any artifacts.
 * As we process audio chunks of 60ms, at first using Sinc interpolation we generate 1600 samples from 960 samples.
 * Then frequency shifting is applied to this interpolated signal and finally, the resulting signal is downsampled to 960 samples.
 
-**Sinc Filter**
+## Sinc Filter
 For resampling Sinc filter is used which has a maximum value of 1 at index 0 and decades gradually on both ends. The formula of the Sinc filter is provided below.
 
 <p align="center">
@@ -64,7 +64,7 @@ The below figure shows the shape of the Sinc filter.
     <img src="images/sinc_shape.png" alt="Project Logo" width="500" height="200">
 </p>
 
-**Pseudocode for Sinc filter, Up and Down sampling using Sinc filter**
+**Pseudocode for Sinc filter, Up and Down sampling**
 ```
 def sinc(x):
     if x == 0:
@@ -104,10 +104,38 @@ def sincDownSample(upsample, originalSize):
     return audio
 
 ```
-------------------------------------------------------------------------------------
-For shifting frequency by a small amount, we use the Hilbert transformer.
 
-## Resources
+## Pseudocode of Frequency Shifting
+```
+timer = 0
+
+def frequencyShifting(audio):
+    targetSize = 1600
+    originalSize = LEN(audio)
+    upsample = sincUpSample(audio, targetSize)
+    analyticalSignal[] = hilbertTransformation(upsample)
+
+    N = LEN(analyticalSignal)
+    for i = 0 to N-1:
+        analyticalSignal[i] *= (e ^ (2 * PI * fs * (timer / f))
+        timer += 1
+
+    audio = sincDownSample(upsample, originalSize)
+    return audio
+
+```
+Note: For better audio quality the Dynamic Range Compression algorithm can be applied after applying frequency shifting.
+
+## Simulation and Optimal Values of Parameters
+We applied Frequency Shifting to the raw audio file sampled at 16000 Hz. Optimal values of parameters are provided below:
+* f<sub>s</sub> = ``5``
+* target<sub>chunk_size</sub> = ``1600``
+* window<sub>size</sub>: ``129`` (-64 to +64)
+
+## Real-time Example
+With the optimal configuration, we applied the Frequency Shifting algorithm to the [input audio](audio/fs_input.raw) and generated the [output audio](audio/fs_output.raw). 
+
+## References
 1. FREQUENCY SHIFTING FOR ACOUSTIC HOWLING SUPPRESSION (Paper - 2010)
       * https://ccrma.stanford.edu/~eberdahl/Papers/DAFx2010BerdahlHarris.pdf
       * https://ccrma.stanford.edu/~eberdahl/Projects/FreqShift/ (Demonstration - Stanford University)
@@ -115,8 +143,15 @@ For shifting frequency by a small amount, we use the Hilbert transformer.
 2. 50 Years of Acoustic Feedback Control: State of the Art and Future Challenges (Paper - 2010)
       * https://ieeexplore.ieee.org/document/5675660 (Review paper on different methodologies for AFC)
 
+---
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'24)*<br>
+*Date (creation) - 31/10/24*<br>
+*Date (last modification) - 31/10/24*<br>
 
-## Finding
-1. Frequency shifting works perfectly for processing time of multiples of 100ms.
 
-2. For 60ms processing, a click sound is added after the chunks. To solve this problem, resampling is performed from 60ms to 100ms. After the frequency shifting, again resampling is performed from 100ms to 60ms using the Sinc interpolation technique, which yielded better results.
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Nafiul Alam Fuji*<br>
+
+
