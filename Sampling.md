@@ -2,7 +2,7 @@
 
 In digital signal processing (DSP), the process of converting a continuous analog signal to a digital signal is called **sampling**. On the other hand, the **sampling rate / frequency** refers to the number of samples per second taken from a continuous signal to create a digital signal. A higher sampling rate corresponds to more fine-grained audio at the expense of more memory usage for storing more samples per second.
 
-In Reve Conference, we are working with a sample rate of 16000 Hz (16000 samples per second). However, the RNNoise audio processing module which deals with noise cancellation from audio, requires a sampling rate of 48000 Hz. To overcome this issue, we first perform upsampling from 16 kHz to 48 kHz. Then perform noise cancellation. Later we down-sampled the audio from 48 kHz to 16 kHz.
+In the Reve Conference project, we are working with a sample rate of 16000 Hz (16000 samples per second). However, the RNNoise audio processing module which deals with noise cancellation from audio, requires a sampling rate of 48000 Hz. To overcome this issue, we first perform upsampling from 16 kHz to 48 kHz. Then perform noise cancellation. Later we down-sampled the audio from 48 kHz to 16 kHz.
 
 **Upsampling**: In upsampling, the sample rate is increased (Ex. 16 kHz to 48 kHz). There are some simple algorithms for performing upsampling:
 * Repetition of sample value.
@@ -58,8 +58,8 @@ def downsample(upsample, f1, f2):
 
 ```
 
-
-
+## Real-time Example
+We applied the upsampling algorithm to an [input audio of 16 kHz](audio/sampling_input.raw) and generated an [output audio fo 48 kHz](audio/sampling_output_upsample.raw). Then we performed downsampling and created a [downsampled audio of 16 kHz](audio/sampling_output_downsample.raw).
 
 
 
