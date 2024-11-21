@@ -12,7 +12,7 @@
 * Architecture: x64
 * Meson
 * Ninja
-  
+* Installing Ninja and Meson:
   ```
   python --version
   python -m pip install --upgrade pip
@@ -21,7 +21,7 @@
   ```
 
 ## Setting up the project
-* clone this repository
+* Clone this repository
 * Open the project using Microsoft Visual Studio.
 * Open the developer command prompt from the Tools section.
 * Set up the environment for the x64 architecture.
@@ -42,3 +42,6 @@
   ninja -C build install
   ```
 * Build files will be generated the specified location.
+
+**Notes**
+* To build a shared library for Windows (DLL), the ``shared_library()`` statement must be provided.
