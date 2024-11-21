@@ -106,3 +106,15 @@
   ```
 * Clean and build the solution.
 * DLL will be created in ```x64\Release```.
+* 
+
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'24)*<br>
+*Date (creation) - 21/11/24*<br>
+*Date (last modification) - 21/11/24*<br>
+
+
+**Supervised by**<br>
+*Dhiman Paul*<br>
+*Md. Maniruzzaman Monir*<br>
+*Nafiul Alam Fuji*<br>
