@@ -72,7 +72,23 @@
 9. Remove pre-compiled headers by going to the location below.<br>
   9.1. ```Properties -> Configuration Properties -> C/C++ -> Precompiled Headers -> Precompiled Header -> Not Using Precompiled Headers.```
 10. Clean and build the solution.
-11. .exe file will be generated at ```webrtc_apm_updated64\x64\Release```.
+11. ```.exe``` file will be generated at ```webrtc_apm_updated64\x64\Release```.
 12. Place the ```input.raw``` file and the ```webrtc-audio-processing-3.dll``` from the location ```webrtc_apm_updated64\webrtc_apm_updated64\webrtc_apm_libs\bin``` to the location ```webrtc_apm_updated64\x64\Release```.
-13. Execute the .exe file by running ```webrtc_apm_updated64.exe```.
+13. Execute the ```.exe``` file by running ```webrtc_apm_updated64.exe```.
 14. ```ouput.raw``` file will be generated which if the AGC2 performed version of ```input.raw``` file.
+
+
+# WebRTC AGC2 dll building
+**Goal:** In this project, we build a dll for performing AGC2 and integrate the dll using Java Native Interface.
+
+## Tools
+* Microsoft Visual Studio 2022
+* IntelliJ IDEA Community Edition 2024
+
+## Prerequisites
+* C++ version: 17
+* Architecture: x64
+* Java
+
+## Setting up the project
+* Create a Dynamic Link Library project in Microsoft Visual Studio (ex. ```webrtc_agc2```).
