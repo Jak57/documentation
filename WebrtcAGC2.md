@@ -91,4 +91,17 @@
 * Java
 
 ## Setting up the project
+* Go to the location of the .java file for which you want to generate the header (ex. ```WebrtcAGC2.java```).
+* Run the following command to create the header file.
+  * ```javac -h . WebrtcAGC2.Java```
 * Create a Dynamic Link Library project in Microsoft Visual Studio (ex. ```webrtc_agc2```).
+* Select ```Release``` as solution configuration and ```x64``` as solution platform.
+* Add the header file to the ```Header Files``` section and the c++ file for interfacing with java code in the ```Source Files``` section.
+* Follow steps 4 to 9 from the previous setup section in the context of webrtc_agc2.
+* In step 6 add the files provided below:
+  ```
+  C:\Users\Reve_207\.jdks\corretto-17.0.11\include
+  C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32
+  ```
+* Clean and build the solution.
+* DLL will be created in ```x64\Release```.
