@@ -71,3 +71,8 @@
   * ```Properties -> Configuration Properties -> Linker -> Input -> Additional Dependencies```
 * Remove pre-compiled headers by going to the location below.
   * ```Properties -> Configuration Properties -> C/C++ -> Precompiled Headers -> Precompiled Header -> Not Using Precompiled Headers.```
+* Clean and build the solution.
+* .exe file will be generate at ```webrtc_apm_updated64\x64\Release```.
+* Place the ```input.raw``` file and the ```webrtc-audio-processing-3.dll``` from the location ```webrtc_apm_updated64\webrtc_apm_updated64\webrtc_apm_libs\bin``` to the location ```webrtc_apm_updated64\x64\Release```.
+* Execute the .exe file by running ```webrtc_apm_updated64.exe```.
+* ```ouput.raw``` file will be generated which if the AGC2 performed version of ```input.raw``` file.
