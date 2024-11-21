@@ -1,9 +1,12 @@
 # Building Library from WebRTC Audio Processing Module (APM)
 
 **Goal:** In this project, we generate header files (.h), a lib file (.lib), and a dll file (.dll) using Meson and Ninja from WebRTC's audio processing module.<br>
+
 **Origin of the code base:** https://git.iptelephony.revesoft.com/mobileapps/OtherProjects/webrtc-audio-processing-1.3<br>
 **Author of the original codebase:** Dhiman Paul<br>
 **Tested commit:** defb4f12487c24c30acb8d32fb78f6a3f501e8c1<br>
+
+**Links of all repositories described in this wiki:** https://git.iptelephony.revesoft.com/webrtcagc2
 
 ## Tools
 * Microsoft Visual Studio 2022
@@ -47,7 +50,7 @@
 * To build a shared library for Windows (DLL), the ``shared_library()`` statement must be provided.
 
 ---
-# Testing the AGC2 form WebRTC APM using a console application
+# Testing the AGC2 form WebRTC APM Using a Console Application
 **Goal:** In this project, we test the functionality of WebRTC's AGC2 using a console application of Microsoft's Visual Studio.
 
 ## Tools
@@ -79,7 +82,7 @@
 
 ---
 
-# WebRTC AGC2 dll building
+# WebRTC AGC2 Dynamic Link Library (DLL) Building
 **Goal:** In this project, we build a dll for performing AGC2 and integrate the dll using Java Native Interface.
 
 ## Tools
@@ -106,7 +109,10 @@
   ```
 * Clean and build the solution.
 * DLL will be created in ```x64\Release```.
-* 
+
+**Note**
+* For testing in Java, both DLLs must be loaded.
+
 
 **Prepared by**<br>
 *Jakir Hasan (Reve Systems'24)*<br>
