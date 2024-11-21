@@ -1,4 +1,4 @@
-## Building Library from WebRTC Audio Processing Module (APM)
+# Building Library from WebRTC Audio Processing Module (APM)
 
 **Goal:** In this project, we generate header files (.h), a lib file (.lib), and a dll file (.dll) using Meson and Ninja from WebRTC's audio processing module.<br>
 **Origin of the code base:** https://git.iptelephony.revesoft.com/mobileapps/OtherProjects/webrtc-audio-processing-1.3<br>
@@ -8,7 +8,7 @@
 ## Tools
 * Microsoft Visual Studio 2022
 ## Prerequisites
-* C++ version: >= 17
+* C++ version: 17
 * Architecture: x64
 * Meson
 * Ninja
@@ -41,7 +41,33 @@
   ninja -C build
   ninja -C build install
   ```
-* Build files will be generated the specified location.
+* Build files will be generated at the specified location.
 
 **Notes**
 * To build a shared library for Windows (DLL), the ``shared_library()`` statement must be provided.
+
+---
+# Testing the AGC2 form WebRTC APM using a console application
+**Goal:** In this project, we test the functionality of WebRTC's AGC2 using a console application of Microsoft's Visual Studio.
+
+## Tools
+* Microsoft Visual Studio 2022
+
+## Prerequisites
+* C++ version: 17
+* Architecture: x64
+
+## Setting up the project
+* Open Microsoft Visual Studio and create a console application (ex. ```webrtc_apm_updated64```).
+* Select ```Release``` as solution configuration and ```x64``` as solution platform.
+* Add the c++ program ```webrtc_apm_updated64.cpp``` to the ```Source Files``.
+* Copy the library folder ```webrtc_apm_libs``` to the location ```\webrtc_apm_updated64\webrtc_apm_updated64```.
+* Move all the folders from ```webrtc_apm_libs\include\webrtc-audio-processing``` to ```webrtc_apm_libs\include```.
+* Put the path of header files ```C:\Users\Reve_207\source\repos\webrtc_apm_updated64\webrtc_apm_updated64\webrtc_apm_libs\include``` to the below location.
+  * ```Properties -> Configuration Properties -> C/C++ -> Additional Include Directories```.
+* Put the path of the folder of the lib file ```C:\Users\Reve_207\source\repos\webrtc_apm_updated64\webrtc_apm_updated64\webrtc_apm_libs\lib``` to the below location.
+  * ```Properties -> Configuration Properties -> Linker -> General -> Additional Library Directories.```
+* Put the name of the lib file ```webrtc-audio-processing.lib``` in the below location.
+  * ```Properties -> Configuration Properties -> Linker -> Input -> Additional Dependencies```
+* Remove pre-compiled headers by going to the location below.
+  * ```Properties -> Configuration Properties -> C/C++ -> Precompiled Headers -> Precompiled Header -> Not Using Precompiled Headers.```
