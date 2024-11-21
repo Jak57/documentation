@@ -98,7 +98,7 @@
 * Select ```Release``` as solution configuration and ```x64``` as solution platform.
 * Add the header file to the ```Header Files``` section and the c++ file for interfacing with java code in the ```Source Files``` section.
 * Follow steps 4 to 9 from the previous setup section in the context of webrtc_agc2.
-* In step 6 add the files provided below:
+* In step 6 also add the files provided below:
   ```
   C:\Users\Reve_207\.jdks\corretto-17.0.11\include
   C:\Users\Reve_207\.jdks\corretto-17.0.11\include\win32
