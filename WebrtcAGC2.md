@@ -77,6 +77,7 @@
 13. Execute the ```.exe``` file by running ```webrtc_apm_updated64.exe```.
 14. ```ouput.raw``` file will be generated which if the AGC2 performed version of ```input.raw``` file.
 
+---
 
 # WebRTC AGC2 dll building
 **Goal:** In this project, we build a dll for performing AGC2 and integrate the dll using Java Native Interface.
