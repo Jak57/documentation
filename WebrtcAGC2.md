@@ -60,7 +60,7 @@
 ## Setting up the project
 * Open Microsoft Visual Studio and create a console application (ex. ```webrtc_apm_updated64```).
 * Select ```Release``` as solution configuration and ```x64``` as solution platform.
-* Add the c++ program ```webrtc_apm_updated64.cpp``` to the ```Source Files``.
+* Add the c++ program ```webrtc_apm_updated64.cpp``` to the ```Source Files```.
 * Copy the library folder ```webrtc_apm_libs``` to the location ```\webrtc_apm_updated64\webrtc_apm_updated64```.
 * Move all the folders from ```webrtc_apm_libs\include\webrtc-audio-processing``` to ```webrtc_apm_libs\include```.
 * Put the path of header files ```C:\Users\Reve_207\source\repos\webrtc_apm_updated64\webrtc_apm_updated64\webrtc_apm_libs\include``` to the below location.
