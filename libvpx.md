@@ -57,16 +57,32 @@
 38. unsigned int ss_target_bitrate[VPX_SS_MAX_LAYERS]
 39. unsigned int ts_number_layers
 40. unsigned int ts_target_bitrate[VPX_TS_MAX_LAYERS]
-
+---
 41. unsigned int ts_rate_decimator[VPX_TS_MAX_LAYERS]
 42. unsigned int ts_periodicity
 43. unsigned int ts_layer_id[VPX_TS_MAX_PERIODICITY]
 44. unsigned int layer_target_bitrate[VPX_MAX_LAYERS]
 45. int temporal_layering_mode
-
+---
 46. int use_vizier_rc_params
-47. 
-
+47. vpx_rational_t active_wq_factor
+48. vpx_rational_t err_per_mb_factor
+49. vpx_rational_t sr_default_decay_limit
+50. vpx_rational_t sr_diff_factor
+---
+51. vpx_rational_t kf_err_per_mb_factor
+52. vpx_rational_t kf_frame_min_boost_factor
+53. vpx_rational_t kf_frame_max_boost_first_factor
+54. vpx_rational_t kf_frame_max_boost_subs_factor
+55. vpx_rational_t kf_max_total_boost_factor
+---
+56. vpx_rational_t gf_max_total_boost_factor
+57. vpx_rational_t gf_frame_max_boost_factor
+58. vpx_rational_t zm_factor
+59. vpx_rational_t rd_mult_inter_qp_fac
+60. vpx_rational_t rd_mult_arf_qp_fac
+61. vpx_rational_t rd_mult_key_qp_fac
+---
 
 
 
