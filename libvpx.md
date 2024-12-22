@@ -11,7 +11,7 @@
 ## struct: vpx_codec_enc_cfg               (Encoder configuration structure)<br>
 **Parameter List (vpx_encoder.h)** 
 1. unsigned int g_usage
-2. **unsigned int g_threads**
+2. **unsigned int g_threads**   // present in update_backend
 3. **unsigned int g_profile**
 4. **unsigned int g_w**
 5. **unsigned int g_h**
@@ -103,8 +103,13 @@
 ## struct: vpx_codec_enc_cfg               (Encoder configuration structure)<br>
 
 1. unsigned int g_usage
-2. **unsigned int g_threads**
+2. **unsigned int g_threads** <br>
+   For multi-threaded implementations define the maximum number of threads to use. The codec can use fewer threads than the defined one. <br>
+   cfg->g_threads = 4 (default)
+
 3. **unsigned int g_profile**
+   
+
 4. **unsigned int g_w**
 5. **unsigned int g_h**
 ---
