@@ -135,11 +135,17 @@
       * 4:4:4 or 4:2:2 chroma subsampling (HDR)
 
 4. **unsigned int g_w**
+   * Width of the video frame in pixels.
+
 5. **unsigned int g_h**
+   * Height of the video frame in pixels.
 ---
 6. vpx_bit_depth_t g_bit_depth
 7. unsigned int g_input_bit_depth
 8. **struct vpx_rational g_timebase**
+   * Defines the smallest unit of time (in seconds) that corresponds to one frame in a video. It is expressed as num/den.
+   * num = 1, and den = FPS (frame per second)
+
 9. **vpx_codec_er_flags_t g_error_resilient**
 10. **enum vpx_enc_pass g_pass**
 ---
