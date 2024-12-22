@@ -9,7 +9,7 @@
   * svc_ctx -> Scalable Video Coding Context
 ---
 ## struct: vpx_codec_enc_cfg               (Encoder configuration structure)<br>
-**Parameter List** 
+**Parameter List (vpx_encoder.h)** 
 1. unsigned int g_usage
 2. **unsigned int g_threads**
 3. **unsigned int g_profile**
