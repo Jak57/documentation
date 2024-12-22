@@ -118,7 +118,21 @@
    * Low resolution (360/480 px): Fewer threads are needed.
 
 3. **unsigned int g_profile**
-   
+   * Selects encoding profile. Some decoder only supports specific profiles.
+   * Currently used: cfg->g_profile = 0
+   * For VP9: Profile = 0
+      * 8-bit color depth
+      * 4:2:0 chroma subsampling
+   * Profile 0 has broad device compatibility
+   * Profile = 1
+      * 8-bit color depth
+      * 4:4:4 or 4:2:2 chroma subsampling (screen share or professional video)
+   * Profile = 2
+      * 10/12-bit color depth
+      * 4:2:0 chroma subsampling (HDR)
+   * Profile = 3
+      * 10/12-bit color depth
+      * 4:4:4 or 4:2:2 chroma subsampling (HDR)
 
 4. **unsigned int g_w**
 5. **unsigned int g_h**
