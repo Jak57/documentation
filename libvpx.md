@@ -85,8 +85,19 @@
 ---
 
 
-
-
+## struct: SvcContext
+**Parameter List (svc_context.h)**
+1. **int spatial_layers**
+2. **int temporal_layers**
+3. **int temporal_layering_mode**
+4. SVC_LOG_LEVEL log_level
+5. int output_rc_stat
+---
+6. **int speed**
+7. **int threads**
+8. **int aqmode**
+9. void *internal
+---
 
 
 
