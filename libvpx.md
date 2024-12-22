@@ -162,7 +162,9 @@
         * Encoding is slow but provides better quality at a given bitrate.
 
 ---
-11. **unsigned int g_lag_in_frames**
+11. **unsigned int g_lag_in_frames**   // todo
+
+
 12. **unsigned int rc_dropframe_thresh**
 13. unsigned int rc_resize_allowed
 14. unsigned int rc_scaled_width
