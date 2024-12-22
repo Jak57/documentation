@@ -104,8 +104,18 @@
 
 1. unsigned int g_usage
 2. **unsigned int g_threads** <br>
-   For multi-threaded implementations define the maximum number of threads to use. The codec can use fewer threads than the defined one. <br>
-   cfg->g_threads = 4 (default)
+   * For multi-threaded implementations define the maximum number of threads to use for encoding. The codec can use fewer threads than the defined one.
+   * Must be selected based on the number of logical processors/cores available on the system.
+   * Currently used: cfg->g_threads = 4
+   * Optimal: Measure the number of threads on the system and assign the value dynamically.
+     ```
+     #include<unistd.h>
+
+     unsigned int num_threads = sysconf(_SC_NPROCESSORS_ONLN)
+     cfg->g_threads = num_threads
+     ```
+   * High resolution (1080 px): More threads need to be used for distributing the workloads.
+   * Low resolution (360/480 px): Fewer threads are needed.
 
 3. **unsigned int g_profile**
    
