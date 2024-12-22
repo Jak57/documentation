@@ -146,8 +146,21 @@
    * Defines the smallest unit of time (in seconds) that corresponds to one frame in a video. It is expressed as num/den.
    * num = 1, and den = FPS (frame per second)
 
-9. **vpx_codec_er_flags_t g_error_resilient**
+9. vpx_codec_er_flags_t g_error_resilient
 10. **enum vpx_enc_pass g_pass**
+    * Multi-pass encoding mode
+    * For single pass: VPX_RC_ONE_PASS
+    * For multi-pass: VPX_RC_FIRST_PASS -> VPX_RC_LAST_PASS
+    * VPX_RC_ONE_PASS
+       * The encoder processes the video in one step and no prior analysis is performed.
+       * Encoding is fast and suitable for real-time low-latency applications.
+       * In terms of bitrate control and overall quality it is less efficient.
+     * VPX_RC_FIRST_PASS
+        * Statistical analysis is performed.
+     * VPX_RC_LAST_PASS
+        * For optimizing the encoding decisions, data collected from the first pass is used.
+        * Encoding is slow but provides better quality at a given bitrate.
+
 ---
 11. **unsigned int g_lag_in_frames**
 12. **unsigned int rc_dropframe_thresh**
