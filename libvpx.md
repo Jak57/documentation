@@ -162,10 +162,20 @@
         * Encoding is slow but provides better quality at a given bitrate.
 
 ---
-11. **unsigned int g_lag_in_frames**   // todo
-
+11. **unsigned int g_lag_in_frames**   
+     * Allow lagged encoding.
+     * The encoder consumes a specified number of frames (<=) and encodes the current frame for better compression efficiency.
+     * This introduces latency and is not suitable for real-time communications.
+     * For real-time communication cfg->g_lag_in_frames = 0
 
 12. **unsigned int rc_dropframe_thresh**
+    * Temporal resampling configuration.
+    * To meet the target data rate, temporal resampling allows the codec to drop frames.
+    * The threshold is described as a percentage of the target data buffer. When the data buffer falls below this percentage of fullness, a dropped frame is indicated.
+    * During scenes of high complexity dropping the frame enables the encoder to stay within bandwidth or storage constraints.
+    * A higher threshold value is used for real-time applications so that bandwidth stays within limits. cfg->rc_dropframe_thresh = 30
+    * To disable frame dropping the threshold is set to 0.
+
 13. unsigned int rc_resize_allowed
 14. unsigned int rc_scaled_width
 15. unsigned int rc_scaled_height
