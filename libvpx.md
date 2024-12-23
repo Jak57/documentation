@@ -168,7 +168,7 @@
      * This introduces latency and is not suitable for real-time communications.
      * For real-time communication cfg->g_lag_in_frames = 0
 
-12. **unsigned int rc_dropframe_thresh**
+12. **unsigned int rc_dropframe_thresh**   // rate control
     * Temporal resampling configuration.
     * To meet the target data rate, temporal resampling allows the codec to drop frames.
     * The threshold is described as a percentage of the target data buffer. When the data buffer falls below this percentage of fullness, a dropped frame is indicated.
@@ -183,6 +183,18 @@
 16. unsigned int rc_resize_up_thresh
 17. unsigned int rc_resize_down_thresh
 18. **enum vpx_rc_mode rc_end_usage**
+    * Rate control algorithm to use.
+    * VPX_VBR: Variable Bit Rate
+       * Bit rate is adjusted dynamically to achieve a target average bit rate over time.
+       * Not suitable for real-time application.
+    * VPX_CBR: Constant bit rate
+       * Consistent bit rate is maintained and bandwidth usage is predicted.
+       * Suitable for real-time video conferencing.
+    * VPX_CQ: Constant Quality
+       * Ignoring bit rate control, and maintaining a consistent quality is prioritized.
+    * VPX_Q: Constant Quantizer
+       * Ignoring the bitrate target, a fixed quantization parameter across all frames is used. 
+
 19. vpx_fixed_buf_t rc_twopass_stats_in
 20. vpx_fixed_buf_t rc_firstpass_mb_stats_in
 ---
