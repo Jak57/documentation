@@ -221,13 +221,22 @@
 28. unsigned int rc_buf_optimal_sz
 29. unsigned int rc_2pass_vbr_bias_pct
 30. **unsigned int rc_2pass_vbr_minsection_pct**                                    // 2 pass rate control parameters
-    
+    * Two-pass mode per-GOP minimum bitrate
+    * Minimum percentage of the target bitrate allocated to any given section of a video during two-pass variable bitrate (VBR) encoding.
+    * Prevents sections from being starved at bitrate, ensuring minimum acceptable quality for simpler or less active scenes.
+    * Ex: cfg->rc_2pass_vbr_minsection_pct = 10. The encoder will allocate 10% of the target bitrate to any section of the video regardless of the simplicity of that section.
+    * Protects sections from being compressed too aggressively.
 
 ---
 31. **unsigned int rc_2pass_vbr_maxsection_pct**
+    * Specifies the maximum percentage of the target bitrate that can be allocated to any signle section of video during two-pass variable bitrate encoding.
+    * The second pass encodes the video, using the analysis of the first pass to allocate bitrate efficiently accross the video.
+
 32. unsigned int rc_2pass_vbr_corpus_complexity
-33. enum vpx_kf_mode kf_mode
+33. enum vpx_kf_mode kf_mode    // keyframe setting
 34. **unsigned int kf_min_dist**
+
+
 35. **unsigned int kf_max_dist**
 ---
 36. unsigned int ss_number_layers
