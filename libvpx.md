@@ -209,7 +209,9 @@
     * Currently used: cfg->rc_min_quantizer = 4
 
 23. **unsigned int rc_max_quantizer**
-
+    * Maximum (worst quality) quantizer
+    * To meet the specified target bitrate it sets the upper limit to how much the encoder can reduce the quality.
+    * Range: (0, no quantization, impractical) to (63, maximum quantization)
 
 24. unsigned int rc_undershoot_pct
 25. unsigned int rc_overshoot_pct
@@ -218,7 +220,9 @@
 27. unsigned int rc_buf_initial_sz
 28. unsigned int rc_buf_optimal_sz
 29. unsigned int rc_2pass_vbr_bias_pct
-30. **unsigned int rc_2pass_vbr_minsection_pct**
+30. **unsigned int rc_2pass_vbr_minsection_pct**                                    // 2 pass rate control parameters
+    
+
 ---
 31. **unsigned int rc_2pass_vbr_maxsection_pct**
 32. unsigned int rc_2pass_vbr_corpus_complexity
