@@ -199,8 +199,18 @@
 20. vpx_fixed_buf_t rc_firstpass_mb_stats_in
 ---
 21. **unsigned int rc_target_bitrate**
+    * Target bitrate that the encoder will use for this stream (kbps).
+    * Currently used: cfg->rc_target_bitrate = 1500
+
 22. **unsigned int rc_min_quantizer**
+    * In video compression quantization is the process of removing less important visual details to reduce data size.
+    * Range: (0 -> lossless, highest quality, larger file size or bitrate) to (63 -> very low quality, smaller file size or bitrate)
+    * rc_min_quantizer sets the floor limit on the quantizer value so that the encoder can not produce video of excessively high quality.
+    * Currently used: cfg->rc_min_quantizer = 4
+
 23. **unsigned int rc_max_quantizer**
+
+
 24. unsigned int rc_undershoot_pct
 25. unsigned int rc_overshoot_pct
 ---
