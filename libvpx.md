@@ -255,9 +255,11 @@
 44. unsigned int layer_target_bitrate[VPX_MAX_LAYERS]
 45. **int temporal_layering_mode**
     * Organizes frames into layers based on temporal dependencies, improving scalability, bitrate allocation, and compression efficiency.
-    * Currently used: cfg->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212
-    * 
-
+    * Currently used: cfg->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212 (3)
+      * Layer 0: Base layer (most critical frames).
+      * Layer 1: Adds additional intermediate frames.
+      * Layer 2: Provides the highest frame rate or smoothest motion.
+     * Based on network conditions layers can be dropped (e.g.: 30fps -> 15fps -> 7.5fps)
 ---
 46. int use_vizier_rc_params
 47. vpx_rational_t active_wq_factor
@@ -279,7 +281,24 @@
 61. vpx_rational_t rd_mult_key_qp_fac
 ---
 
+# Description of Parameters (svc_context.h)
+## struct: SvcContext
 
+1. **int spatial_layers**
+   * Refers to the number of spatial layers in a scalable video coding configuration.
+   * Video streams are encoded at multiple resolutions (e.g.: 1920x1080, 1280x720, 640x360).
+   * Currently used: svc_ctx->spatial_layers = 3
+      * The base layer can be decoded independently whereas higher layers can not.
+  
+2. **int temporal_layers**
+3. **int temporal_layering_mode**
+4. SVC_LOG_LEVEL log_level
+5. int output_rc_stat
+---
+6. **int speed**
+7. **int threads**
+8. **int aqmode**
+9. void *internal
 
 
 
