@@ -236,8 +236,12 @@
 33. enum vpx_kf_mode kf_mode    // keyframe setting
 34. **unsigned int kf_min_dist**
     * Minimum distance (in frames) between consecutive keyframes (Intra-frames / I-frames)
+    * Currently used: cfg->kf_min_dist = 5
 
 35. **unsigned int kf_max_dist**
+    * Maximum distance (in frames) between consecutive keyframes (Intra-frames / I-frames)
+    * Currently used: cfg->kf_max_dist = 5
+
 ---
 36. unsigned int ss_number_layers
 37. int ss_enable_auto_alt_ref[VPX_SS_MAX_LAYERS]
@@ -250,6 +254,10 @@
 43. unsigned int ts_layer_id[VPX_TS_MAX_PERIODICITY]
 44. unsigned int layer_target_bitrate[VPX_MAX_LAYERS]
 45. **int temporal_layering_mode**
+    * Organizes frames into layers based on temporal dependencies, improving scalability, bitrate allocation, and compression efficiency.
+    * Currently used: cfg->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212
+    * 
+
 ---
 46. int use_vizier_rc_params
 47. vpx_rational_t active_wq_factor
