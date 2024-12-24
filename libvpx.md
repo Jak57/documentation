@@ -205,7 +205,7 @@
 22. **unsigned int rc_min_quantizer**
     * In video compression quantization is the process of removing less important visual details to reduce data size.
     * Range: (0 -> lossless, highest quality, larger file size or bitrate) to (63 -> very low quality, smaller file size or bitrate)
-    * rc_min_quantizer sets the floor limit on the quantizer value so that the encoder can not produce video of excessively high quality.
+    * rc_min_quantizer sets the floor limit on the quantizer value so that the encoder can not produce a video of excessively high quality.
     * Currently used: cfg->rc_min_quantizer = 4
 
 23. **unsigned int rc_max_quantizer**
@@ -229,13 +229,13 @@
 
 ---
 31. **unsigned int rc_2pass_vbr_maxsection_pct**
-    * Specifies the maximum percentage of the target bitrate that can be allocated to any signle section of video during two-pass variable bitrate encoding.
-    * The second pass encodes the video, using the analysis of the first pass to allocate bitrate efficiently accross the video.
+    * Specifies the maximum percentage of the target bitrate that can be allocated to any single section of video during two-pass variable bitrate encoding.
+    * The second pass encodes the video, using the analysis of the first pass to allocate bitrate efficiently across the video.
 
 32. unsigned int rc_2pass_vbr_corpus_complexity
 33. enum vpx_kf_mode kf_mode    // keyframe setting
 34. **unsigned int kf_min_dist**
-
+    * Minimum distance (in frames) between consecutive keyframes (Intra-frames / I-frames)
 
 35. **unsigned int kf_max_dist**
 ---
