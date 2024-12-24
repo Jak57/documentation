@@ -299,6 +299,8 @@
    * Currently used: svc_ctx->temporal_layers = 1
 
 3. **int temporal_layering_mode**
+   * Currently used: svc_ctx->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212
+
 4. SVC_LOG_LEVEL log_level
 5. int output_rc_stat
 ---
