@@ -291,6 +291,13 @@
       * The base layer can be decoded independently whereas higher layers can not.
   
 2. **int temporal_layers**
+   * The number of temporal layers used in the video encoding process.
+   * Allow the encoder to create a scalable video bitstream capable of decoded at different frame rates.
+       * Base layer: Encodes the essential frames for playback at a lower frame rate (e.g.: 15fps)
+       * Higher layers: For achieving a higher frame rate (30/60 fps) more frames are added.
+       * Layer 0 contains a keyframe and some P-frames, layer 1 adds additional P-frames that are dependent on layer 0, and lastly, layer 2 adds more P-frames that            are dependent on layer 1 frames.
+   * Currently used: svc_ctx->temporal_layers = 1
+
 3. **int temporal_layering_mode**
 4. SVC_LOG_LEVEL log_level
 5. int output_rc_stat
