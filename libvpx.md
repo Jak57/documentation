@@ -305,8 +305,26 @@
 5. int output_rc_stat
 ---
 6. **int speed**
+   * Adjusting this parameter determines how much time the encoder spends optimizing output video for a given input.
+   * Faster encoding is useful for real-time applications such as video conferencing.
+   * Range:
+      * 0 -> Slowest encoding, highest quality, and best compression efficiency.
+      * 1-4 -> Balanced presets for encoding speed vs. quality.
+      * 5-8 -> Faster encoding at the cost of reduced quality and less efficient compression.
+      * >=8 -> Faster encoding speed, significantly reduced quality, and compression efficiency.
+
 7. **int threads**
+   * When multiple threads are enabled, the encoder divides the video frame into smaller sections (e.g. tiles or slices). These sections are processed independently
+     across the threads reducing encoding time.
+   * Range:
+      * 1 -> Single-threaded encoding; slowest but deterministic behavior.
+      * 2-4 -> Moderate threading; suitable for systems with 2-4 CPU cores.
+      * > 4 -> Higher threading; takes advantage of multi-core CUPs for high-speed encoding.
+   * The upper limit of threads depends on the number of CPU cores available in the system.
+
 8. **int aqmode**
+   * 
+
 9. void *internal
 
 
