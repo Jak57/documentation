@@ -302,6 +302,11 @@
    * Currently used: svc_ctx->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212
 
 4. SVC_LOG_LEVEL log_level
+   * Determines the verbosity level of logs during the Scalable Video Coding.
+      * SVC_LOG_ERROR -> Logs only critical errors that prevent the encoding process from functioning correctly.
+      * SVC_LOG_INFO -> Logs general informational messages about the encoding process.
+      * SVC_LOG_DEBUG -> Logs detailed debugging information for in-depth analysis.
+
 5. int output_rc_stat
 ---
 6. **int speed**
