@@ -347,13 +347,20 @@
 
 
 
+## References
+1. Descriptions of parameters collected by Fuji vai.<br>
+   [gilab link](https://git.iptelephony.revesoft.com/sumit/reve_vpx_wrapper/-/blob/fuji/CodecVPX.cpp)
+
+---
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'24)*<br>
+*Date (creation) - 19/12/24*<br>
+*Date (last modification) - 26/12/24*<br>
 
 
-
-
-
-
-
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Nafiul Alam Fuji*<br>
 
 
 
