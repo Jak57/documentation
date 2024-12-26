@@ -323,7 +323,19 @@
    * The upper limit of threads depends on the number of CPU cores available in the system.
 
 8. **int aqmode**
-   * 
+   * Adaptive quantization mode (aqmode) adjusts the quantization parameter for different regions of a video frame based on specific criteria.
+   * Quantization is a process in video compression where continuous or large sets of values (e.g., pixel intensity values or transform coefficients) are
+     approximated or mapped to smaller discrete sets of values. This reduces the precision of the data, thereby saving storage and transmission bandwidth.
+   * A lower quantization parameter (QP) value results in better quality but higher bitrate whereas a higher QP value results in lower quality but reduced bitrate.
+   * Values: (Value -> Mode -> Description)
+       * 0 -> Off (Default) -> No adaptive quantization; the same quantization parameter is applied uniformly across the frame.
+       * 1 -> Variance-Based AQ -> Adjusts QP based on spatial variance in a frame, prioritizing high-detail areas.
+       * 2 -> Complexity-Based AQ -> Adjusts QP based on frame complexity, allocating more bits to areas with significant motions.
+       * 3 -> Cyclic Refresh AQ -> Temporarily boosts quality in specific frame regions to improve the perceptual experience.
+   * Use Cases
+       * Static Scenes: ```aqmode = 0``` might be sufficient for static, low-motion content like slideshow or presentation.
+       * High-Detail Scenes: ```aqmode = 1``` is ideal for scenes with significant texture or spatial detail to preserve visual quality.
+       * High-Motion Content: ```aqmode = 2``` works well for sports and action scenes, where motion complexity requires adaptive bit allocation. 
 
 9. void *internal
 
