@@ -261,6 +261,12 @@
     * Contains the statistics collected during the first pass of the two-pass encoding process.
 
 20. vpx_fixed_buf_t rc_firstpass_mb_stats_in
+    * First pass mb stats buffer.
+    * A buffer containing all of the first pass macroblock (MB) stats packets produced in the
+      first pass, concatenated.
+    * Provides additional granularity by analyzing and storing statistics at the macroblock level       during the first pass.
+      
+
 ---
 21. **unsigned int rc_target_bitrate**
     * Target bitrate that the encoder will use for this stream (kbps).
@@ -280,6 +286,12 @@
 
 ## Bitrate tolerance
 24. unsigned int rc_undershoot_pct
+    * Rate control adaptation undershoot control.
+    * VP9: Expressed as a percentage of the target bitrate, a threshold undershoot level
+      (current rate vs target) beyond which more aggressive corrective measures are taken.
+    * Determines how much the actual bitrate can go below the target bitrate for a given time 
+      window.
+
 25. unsigned int rc_overshoot_pct
 ---
 ## Decoder buffer model parameters
