@@ -102,6 +102,7 @@
 # Description of Parameters(vpx_encoder.h)
 ## struct: vpx_codec_enc_cfg               (Encoder configuration structure)<br>
 
+## Generic settings (g)
 1. unsigned int g_usage
    * Deprecated: Algorithm-specific "usage" value.
    * Must be zero.
@@ -162,6 +163,21 @@
    * num = 1, and den = FPS (frame per second)
 
 9. vpx_codec_er_flags_t g_error_resilient
+   * Configure error-resilient feature.
+   * Helps in mitigating the effect of packet loss or corruption during transmission.
+   * Enables the codec to encode or decode video in a way that reduces the impact of error.
+   * Flags:
+      * VPX_ERROR_RESILIENT_DEFAULT
+         * Enables the default error-resilience settings.
+         * Usually ensures that frames are independently decodable (intra-coded) to reduce dependency between frames.
+      * VPX_ERROR_RESILIENT_PARTITIONS
+         * Makes partitions of a single frame independently decodable.
+         * Helps mitigate the impact of packet loss on the entire frame.
+    * Encoding:
+      * The encoder may insert additional intra-coded blocks or independently decodable frame partitions.
+    * Decoder:
+      * The decoder can recover from corrupted data by skipping damaged partitions or reconstructing frames using intra-coded data.
+
 10. **enum vpx_enc_pass g_pass**
     * Multi-pass encoding mode
     * For single pass: VPX_RC_ONE_PASS
@@ -183,7 +199,8 @@
      * This introduces latency and is not suitable for real-time communications.
      * For real-time communication cfg->g_lag_in_frames = 0
 
-12. **unsigned int rc_dropframe_thresh**   // rate control
+## Rate control settings (rc)
+12. **unsigned int rc_dropframe_thresh**   
     * Temporal resampling configuration.
     * To meet the target data rate, temporal resampling allows the codec to drop frames.
     * The threshold is described as a percentage of the target data buffer. When the data buffer falls below this percentage of fullness, a dropped frame is indicated.
@@ -192,7 +209,20 @@
     * To disable frame dropping the threshold is set to 0.
 
 13. unsigned int rc_resize_allowed
+    * Enable or disable spatial resampling.
+    * Spatial resampling allows the codec to compress a lower-resolution version of the frame, which is then upscaled by the encoder
+      to the correct presentation resolution.
+    * Increased quality at a low data rate, at the expense of CUP time on the encoder/decoder.
+    * Frame resizing refers to the ability of the encoder to adjust the resolution of the video frame dynamically during encoding.
+    * When network conditions deteriorate bitrate can be lowered with the help of frame resizing.
+    * Value:
+       * 0: Frame resizing is disabled.
+       * 1: Frame resizing is enabled.
+    * When the actual bitrate significantly exceeds the target bitrate, the encoder resizes frames to a smaller resolution.
+
 14. unsigned int rc_scaled_width
+
+
 15. unsigned int rc_scaled_height
 ---
 16. unsigned int rc_resize_up_thresh
@@ -217,6 +247,7 @@
     * Target bitrate that the encoder will use for this stream (kbps).
     * Currently used: cfg->rc_target_bitrate = 1500
 
+## Quantizer settings
 22. **unsigned int rc_min_quantizer**
     * In video compression quantization is the process of removing less important visual details to reduce data size.
     * Range: (0 -> lossless, highest quality, larger file size or bitrate) to (63 -> very low quality, smaller file size or bitrate)
@@ -228,14 +259,20 @@
     * To meet the specified target bitrate it sets the upper limit to how much the encoder can reduce the quality.
     * Range: (0, no quantization, impractical) to (63, maximum quantization)
 
+## Bitrate tolerance
 24. unsigned int rc_undershoot_pct
 25. unsigned int rc_overshoot_pct
 ---
+## Decoder buffer model parameters
+
 26. unsigned int rc_buf_sz
 27. unsigned int rc_buf_initial_sz
 28. unsigned int rc_buf_optimal_sz
+
+## 2 pass rate control parameters
+
 29. unsigned int rc_2pass_vbr_bias_pct
-30. **unsigned int rc_2pass_vbr_minsection_pct**                                    // 2 pass rate control parameters
+30. **unsigned int rc_2pass_vbr_minsection_pct**                                
     * Two-pass mode per-GOP minimum bitrate
     * Minimum percentage of the target bitrate allocated to any given section of a video during two-pass variable bitrate (VBR) encoding.
     * Prevents sections from being starved at bitrate, ensuring minimum acceptable quality for simpler or less active scenes.
@@ -248,7 +285,10 @@
     * The second pass encodes the video, using the analysis of the first pass to allocate bitrate efficiently across the video.
 
 32. unsigned int rc_2pass_vbr_corpus_complexity
-33. enum vpx_kf_mode kf_mode    // keyframe setting
+
+## Keyframe settings (kf)
+
+33. enum vpx_kf_mode kf_mode    
 34. **unsigned int kf_min_dist**
     * Minimum distance (in frames) between consecutive keyframes (Intra-frames / I-frames)
     * Currently used: cfg->kf_min_dist = 5
@@ -258,6 +298,8 @@
     * Currently used: cfg->kf_max_dist = 5
 
 ---
+## Spatial scalability settings (ss)
+
 36. unsigned int ss_number_layers
 37. int ss_enable_auto_alt_ref[VPX_SS_MAX_LAYERS]
 38. unsigned int ss_target_bitrate[VPX_SS_MAX_LAYERS]
