@@ -308,6 +308,9 @@
       * SVC_LOG_DEBUG -> Logs detailed debugging information for in-depth analysis.
 
 5. int output_rc_stat
+   * Controls whether rate control statistics are output during the SVC encoding process.
+   * To enable outputting rate control statistics assign a non-negative value to output_rc_stat.
+   * Rate control statistics help analyze the bitrate allocation, frame sizes, quantizer values, and overall efficiency of the encoder's rate control mechanism.
 ---
 6. **int speed**
    * Adjusting this parameter determines how much time the encoder spends optimizing output video for a given input.
@@ -343,8 +346,8 @@
        * High-Motion Content: ```aqmode = 2``` works well for sports and action scenes, where motion complexity requires adaptive bit allocation. 
 
 9. void *internal
-
-
+   * Pointer that serves as a private storage area for the implementation-specific details of scalable video coding.
+   * This field encapsulates internal states and data used by the encoding process but is hidden from the public interface to maintain abstraction and modularity.
 
 
 ## References
