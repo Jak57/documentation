@@ -103,6 +103,9 @@
 ## struct: vpx_codec_enc_cfg               (Encoder configuration structure)<br>
 
 1. unsigned int g_usage
+   * Deprecated: Algorithm-specific "usage" value.
+   * Must be zero.
+
 2. **unsigned int g_threads** <br>
    * For multi-threaded implementations define the maximum number of threads to use for encoding. The codec can use fewer threads than the defined one.
    * Must be selected based on the number of logical processors/cores available on the system.
@@ -141,7 +144,19 @@
    * Height of the video frame in pixels.
 ---
 6. vpx_bit_depth_t g_bit_depth
+   * Bit-depth of the codec.
+   * Determines the precision of each pixel's color component and directly impacts the quality and size of the video.
+   * Values:
+      * VPX_BITS_8: 8 bits per color component (standard precision for most video content).
+          * Sufficient for most standard-definition (SD) and high-definition (HD) content.
+          * File size is small and processing is faster.
+      * VPX_BITS_10: 10 bits per color component (HDR video).
+      * VPX_BITS_12: 12 bits per color component (Used for high-quality video and HDR content).
+
 7. unsigned int g_input_bit_depth
+   * Bit-depth of the raw input data provided to the encoder or decoder.
+   * Indicates the precision of each color component (YUV) in the raw input.
+
 8. **struct vpx_rational g_timebase**
    * Defines the smallest unit of time (in seconds) that corresponds to one frame in a video. It is expressed as num/den.
    * num = 1, and den = FPS (frame per second)
