@@ -221,12 +221,27 @@
     * When the actual bitrate significantly exceeds the target bitrate, the encoder resizes frames to a smaller resolution.
 
 14. unsigned int rc_scaled_width
-
+    * Internal coded frame width.
+    * If spatial resampling is enabled this specifies the width of the encoded frame.
+    * Specifies the width to which the encoder scales the input video frames, in conjunction with rc_scaled_height, for adaptive resolution adjustment.
+    * Optimizes bitrate, bandwidth, and computational resources by adjusting the width of the video frames.
 
 15. unsigned int rc_scaled_height
+    * Internal coded frame height.
+    * If spatial resampling is enabled this specifies the height of the encoded frame.
+    
 ---
 16. unsigned int rc_resize_up_thresh
+    * Spatial resampling up watermark.
+    * This threshold is described as a percentage of the target data buffer. When the data buffer rises above this percentage of fullness, the
+      encoder will step up to a higher-resolution version of the frame.
+
 17. unsigned int rc_resize_down_thresh
+    * Spatial resampling down watermark.
+    * This threshold is described as a percentage of the target data buffer. When the data buffer
+      below this percentage of fullness, the encoder will step down to a lower-resolution version
+      of the frame.
+
 18. **enum vpx_rc_mode rc_end_usage**
     * Rate control algorithm to use.
     * VPX_VBR: Variable Bit Rate
@@ -241,6 +256,10 @@
        * Ignoring the bitrate target, a fixed quantization parameter across all frames is used. 
 
 19. vpx_fixed_buf_t rc_twopass_stats_in
+    * Two-pass stats buffer.
+    * A buffer containing all of the stats packet produced in the first pass, concatenated.
+    * Contains the statistics collected during the first pass of the two-pass encoding process.
+
 20. vpx_fixed_buf_t rc_firstpass_mb_stats_in
 ---
 21. **unsigned int rc_target_bitrate**
