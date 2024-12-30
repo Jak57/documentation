@@ -293,11 +293,32 @@
       window.
 
 25. unsigned int rc_overshoot_pct
+    * Rate control adaptation overshoot control.
+    * VP9: Expressed as a percentage of the target bitrate, a threshold overshoot level (current rate vs target) beyond which more aggressive corrective measures are 
+      taken.
+    * Defines how much the encoder is allowed to exceed the target bitrate for a specific time window.
+    * A lower value restricts the encoder from exceeding the target bitrate significantly, ensuring bitrate stability.
+    * A higher value grants the encoder more flexibility to overshoot, improving quality during complex scenes but potentially causing brief spikes in bitrate.
+    * In real-time applications use a lower value (30-40) to avoid spikes that could disrupt streaming.
+
 ---
 ## Decoder buffer model parameters
 
 26. unsigned int rc_buf_sz
+    * Decoder buffer size.
+    * Amount of data that may be buffered by the decoding application.
+    * Expressed in units of time (milliseconds).
+    * A value of 5000 indicates that the client will buffer (at least) 5000ms worth of encoded data.
+    * Defines the size of the buffer that holds encoded bits before transmission or storage.
+    * For real-time streaming with network constraints, a smaller buffer size (500 ms) is more suitable.
+
 27. unsigned int rc_buf_initial_sz
+    * Decoder buffer initial size.
+    * Indicates the amount of data that will be buffered by the decoding application prior to beginning playback.
+    * Expressed in units of time (milliseconds).
+    * Smaller buffer size reduces latency at the start of encoding.
+    * Represents the initial size of the rate control buffer as a percentage of the total buffer size.
+
 28. unsigned int rc_buf_optimal_sz
 
 ## 2 pass rate control parameters
