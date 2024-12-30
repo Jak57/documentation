@@ -364,6 +364,18 @@
 ## Keyframe settings (kf)
 
 33. enum vpx_kf_mode kf_mode    
+    * Keyframe placement mode.
+    * Indicates whether the encoder should place keyframes at a fixed interval, or determine the optimal placement automatically
+      (as governed by the kf_min_dist and kf_max_dist parameters).
+    * Keyframes are essential frames in video compression that are encoded independently of other frames, allowing for random access
+      and serving as reference points for subsequent frames.
+    * Modes:
+       * VPX_KF_FIXED -> Inserts keyframe at a fixed interval.
+       * VPX_KF_AUTO -> Keyframes are inserted automatically based on scene change detection.
+       * VPX_KF_DISABLED -> Disables automatic keyframe insertion. Keyframes are only inserted in explicitly defined positions,
+         typically at the start of the video or when triggered manually by the application.
+     * For most scenarios VPX_KF_AUTO is the most suitable choice.
+
 34. **unsigned int kf_min_dist**
     * Minimum distance (in frames) between consecutive keyframes (Intra-frames / I-frames)
     * Currently used: cfg->kf_min_dist = 5
@@ -373,9 +385,12 @@
     * Currently used: cfg->kf_max_dist = 5
 
 ---
+
 ## Spatial scalability settings (ss)
 
 36. unsigned int ss_number_layers
+    * Number of spatial coding layers.
+
 37. int ss_enable_auto_alt_ref[VPX_SS_MAX_LAYERS]
 38. unsigned int ss_target_bitrate[VPX_SS_MAX_LAYERS]
 39. unsigned int ts_number_layers
