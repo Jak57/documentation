@@ -320,16 +320,34 @@
     * Represents the initial size of the rate control buffer as a percentage of the total buffer size.
 
 28. unsigned int rc_buf_optimal_sz
+    * Decoder buffer optimal size.
+    * Indicates the amount of data that the encoder should try to maintain in the decoder's buffer.
+    * The value is expressed in units of time (milliseconds).
+    * Defines the optimal size of the rate control buffer during steady-state operation in video encoding.
+    * Acts as a midpoint for the encoder to oscillate around, helping it manage bitrate peaks and troughs.
+    * rc_buf_initial_sz is less than or equal to rc_buf_optimal_sz.
+    * Smaller values increase adaptability but risk quality instability.
 
 ## 2 pass rate control parameters
 
 29. unsigned int rc_2pass_vbr_bias_pct
+    * Two-pass mode CBR/VBR bias.
+    * Bias is expressed on a scale of 0 to 100 and determines the target size of the current frame.
+    * The value 0 indicates that the optimal CBR mode value should be used.
+    * The value 100 indicates that the optimal VBR mode value should be used.
+    * Values in between indicate which way the encoder should "lean".
+    * Controls the bias percentage during two-pass variable bitrate (VBR) encoding.
+
 30. **unsigned int rc_2pass_vbr_minsection_pct**                                
     * Two-pass mode per-GOP minimum bitrate
     * Minimum percentage of the target bitrate allocated to any given section of a video during two-pass variable bitrate (VBR) encoding.
     * Prevents sections from being starved at bitrate, ensuring minimum acceptable quality for simpler or less active scenes.
     * Ex: cfg->rc_2pass_vbr_minsection_pct = 10. The encoder will allocate 10% of the target bitrate to any section of the video regardless of the simplicity of that section.
     * Protects sections from being compressed too aggressively.
+    * Lower values (0-50%) prioritize quality over strictly meeting the target bitrate.
+    * Higher values (50-100%) prioritize bitrate control over visual quality.
+    * For streaming applications setting higher values (70-90) is beneficial to ensure that the bitrate stays within network bandwidth limits, even if the
+      quality fluctuates slightly.
 
 ---
 31. **unsigned int rc_2pass_vbr_maxsection_pct**
@@ -337,6 +355,11 @@
     * The second pass encodes the video, using the analysis of the first pass to allocate bitrate efficiently across the video.
 
 32. unsigned int rc_2pass_vbr_corpus_complexity
+    * Used in two-pass variable bitrate (VBR) video encoding to estimate the complexity of the video corpus (a collection of video frames or content).
+    * Helps encoder allocate bits effectively across the video sequence to achieve the target bitrate.
+    * Range:
+        * 10-30: low-complexity videos.
+        * 50-100: high-complexity videos.
 
 ## Keyframe settings (kf)
 
