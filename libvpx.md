@@ -474,19 +474,55 @@
     * Determines the error-per-macroblock factor used specifically for keyframes in coding.
     * Low bandwidth scenario: For higher compression increase the value.
     * High-quality streaming: To maintain visual quality decrease the value.
-    * 
+     
 
 52. vpx_rational_t kf_frame_min_boost_factor
+    * Keyframe minimum boost adjustment factor.
+    * Determines how much additional bitrate or quality emphasis should be given to keyframes compared to interframes.
+    * Higher values: Emphasize keyframe quality, and improve reference frame fidelity.
+    * Lower values: Reduce bitrate usage for keyframes, and prioritize compression efficiency.
+
 53. vpx_rational_t kf_frame_max_boost_first_factor
+    * Keyframe maximum boost adjustment factor for the first keyframe in a chunk.
+    * Determines the upper limit of additional quality or bitrate that can be allocated to the very first keyframe,
+      ensuring it is encoded with high-quality while maintaining constraints on bitrate usage.
+    * Higher values: Prioritize first frame quality, which is useful for critical initial scenes.
+    * Lower values: Conserve bitrate, which is suitable for bandwidth-sensitive cases.
+
 54. vpx_rational_t kf_frame_max_boost_subs_factor
+    * Keyframes maximum boost adjustment factor for the subsequent keyframes.
+    * Higher values: Prioritizes subsequent keyframe quality for high-motion or high-complexity content.
+    * Lower values: Conserve bitrate, which is suitable for low bandwidth use cases.
+
 55. vpx_rational_t kf_max_total_boost_factor
+    * Keyframe maximum total boost adjustment factor.
+    * Ensures that the total bitrate assigned to a keyframe (including all boosts) does not exceed a baseline value.
+    * Higher values: Allocate more bitrate to keyframes, suitable for high-quality and high-motion content.
+    * Lower values: Restricts bitrate allocation, ideal for low-complexity or bandwidth-sensitive scenarios.
+
 ---
 56. vpx_rational_t gf_max_total_boost_factor
+    * Golden frame maximum total boost adjustment factor.
+    * Golden frames are used to improve the quality of frames in areas of video with significant changes or high importance.
+
 57. vpx_rational_t gf_frame_max_boost_factor
+    * Golden frame maximum boost adjustment factor.
+
 58. vpx_rational_t zm_factor
+    * Zero motion power factor.
+    * Zero motion areas are regions of videos where zero or no motion occurs for consecutive frames.
+
 59. vpx_rational_t rd_mult_inter_qp_fac
+    * Rate distortion multiplier for interframes.
+    * Higher values: Emphasizes bitrate control, potentially reducing interframe quality.
+    * Lower values: Focuses on quality, possibly at the expense of larger file sizes.
+
 60. vpx_rational_t rd_mult_arf_qp_fac
+    * Rate distortion multiplier for alt-ref frames.
+
 61. vpx_rational_t rd_mult_key_qp_fac
+    * Rate distortion multiplier for keyframes.
+
 ---
 
 # Description of Parameters (svc_context.h)
@@ -566,7 +602,7 @@
 **Prepared by**<br>
 *Jakir Hasan (Reve Systems'24)*<br>
 *Date (creation) - 19/12/24*<br>
-*Date (last modification) - 26/12/24*<br>
+*Date (last modification) - 31/12/24*<br>
 
 
 **Supervised by**<br>
