@@ -462,8 +462,20 @@
     * Decay limit controls how much the encoder can reduce the quality during resampling to maintain bitrate targets.
 
 50. vpx_rational_t sr_diff_factor
+    * Second reference difference factor.
+    * Determines how much influence the difference between actual frame complexity and expected frame complexity has on the decision
+      to perform spatial resampling.
+    * Higher values: More sensitivity, and frequent resampling.
+    * Lower values: Less sensitivity, and prioritizes compression.
+
 ---
 51. vpx_rational_t kf_err_per_mb_factor
+    * Keyframe error per macroblock adjustment factor.
+    * Determines the error-per-macroblock factor used specifically for keyframes in coding.
+    * Low bandwidth scenario: For higher compression increase the value.
+    * High-quality streaming: To maintain visual quality decrease the value.
+    * 
+
 52. vpx_rational_t kf_frame_min_boost_factor
 53. vpx_rational_t kf_frame_max_boost_first_factor
 54. vpx_rational_t kf_frame_max_boost_subs_factor
