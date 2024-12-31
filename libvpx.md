@@ -412,9 +412,25 @@
     * Target bitrate (kbps) for each temporal layer.
 ---
 41. unsigned int ts_rate_decimator[VPX_TS_MAX_LAYERS]
+    * Frame rate decimation factor for each temporal layer.
+    * Determines how frequently frames are encoded in each layer relative to the base frame rate.
+    * A decimator value of 1 means the layer uses the full frame rate.
+    * A decimator value of 2 means the layer uses half the frame rate.
+
 42. unsigned int ts_periodicity
+    * Length of the sequence defining frame temporal layer membership.
+    * Specifies the length of the sequence that defines the membership of frames to temporal layers. For example, if the ts_periodicity = 8,
+      then the frames are assigned to coding layers with a repeated sequence of length 8. 
+    * Defines the periodicity of the temporal layer pattern, which is the repeating pattern of frame layers over time.
+
 43. unsigned int ts_layer_id[VPX_TS_MAX_PERIODICITY]
+    * Template defining the membership of frames to temporal layers.
+    * For a 2-layer encoding that assigns the even-numbered frames to one temporal layer (0) and the odd-numbered frames to a second temporal layer (1)
+      with ts_periodicity=8, then ts_layer_id = (0, 1, 0, 1, 0, 1, 0, 1).
+
 44. unsigned int layer_target_bitrate[VPX_MAX_LAYERS]
+    * Target bitrate (kbps) for each spatial/temporal layer.
+
 45. **int temporal_layering_mode**
     * Organizes frames into layers based on temporal dependencies, improving scalability, bitrate allocation, and compression efficiency.
     * Currently used: cfg->temporal_layering_mode = VP9E_TEMPORAL_LAYERING_MODE_0212 (3)
@@ -424,9 +440,27 @@
      * Based on network conditions layers can be dropped (e.g.: 30fps -> 15fps -> 7.5fps)
 ---
 46. int use_vizier_rc_params
+    * A flag that indicates whether to use external rate control parameters.
+    * By default it is 0. If it is set to 1, the following parameters will be used in the rate control system.
+
 47. vpx_rational_t active_wq_factor
+    * Active worst quality factor.
+    * Rate control parameters. Set from external experimental results.
+    * Only when |use_vizier_rc_params| is set to 1, the passin value will be used. Otherwise, the default value is used.
+
 48. vpx_rational_t err_per_mb_factor
+    * Error per macroblock adjustment factor.
+    * Represents a scaling factor used in video encoding to adjust the weight of the error per macroblock.
+    * Higher factor: prioritize quality, high bitrate.
+    * Lower factor: Prioritize compression, low bitrate.
+    * Higher values maintain higher visual quality.
+    * Lower values reduce visual quality but improve compression.
+
 49. vpx_rational_t sr_default_decay_limit
+    * Second reference default decay limit.
+    * Controls the default decay limit in the spatial resampling process.
+    * Decay limit controls how much the encoder can reduce the quality during resampling to maintain bitrate targets.
+
 50. vpx_rational_t sr_diff_factor
 ---
 51. vpx_rational_t kf_err_per_mb_factor
