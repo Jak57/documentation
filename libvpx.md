@@ -107,7 +107,7 @@
    * Deprecated: Algorithm-specific "usage" value.
    * Must be zero.
 
-2. **unsigned int g_threads** <br>
+2. **unsigned int g_threads***** <br>
    * For multi-threaded implementations define the maximum number of threads to use for encoding. The codec can use fewer threads than the defined one.
    * Must be selected based on the number of logical processors/cores available on the system.
    * Currently used: cfg->g_threads = 4
@@ -596,7 +596,7 @@
 
 ## References
 1. Descriptions of parameters collected by Fuji vai.<br>
-   [gilab link](https://git.iptelephony.revesoft.com/sumit/reve_vpx_wrapper/-/blob/fuji/CodecVPX.cpp)
+   [gitlab link](https://git.iptelephony.revesoft.com/sumit/reve_vpx_wrapper/-/blob/fuji/CodecVPX.cpp)
 
 ---
 **Prepared by**<br>
