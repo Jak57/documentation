@@ -6,8 +6,6 @@
 ## Combinations of spatial layers and temporal layers
 (5 spatial layers + 3 temporal layers)
 
-# Example Table in README.md
-
 | Spatial layers  | Temporal layers  | 
 |:-------------:|:-------------:|
 | 1 | 0 | 
