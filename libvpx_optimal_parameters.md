@@ -8,8 +8,8 @@
 
 # Example Table in README.md
 
-| Spatial layers    | Temporal layers    | 
-|-------------|-------------|
+| Spatial layers  | Temporal layers  | 
+|:-------------:|:-------------:|
 | 1 | 0 | 
 | 1 | 1 | 
 | 1 | 2 | 
