@@ -5,6 +5,7 @@
 
 ## Combinations of spatial layers and temporal layers
 (5 spatial layers + 3 temporal layers)
+* Resolution: 1920x1080, 1280x720, 960x540, 640x360, 320x180
 
 | Spatial layers  | Temporal layers  | 
 |:-------------:|:-------------:|
@@ -13,18 +14,25 @@
 | 1 | 2 | 
 | 1 | 3 |
 | 2 | 0 |
-| 2 | 1 |
 | 2 | 2 |
 | 2 | 3 |
 | 3 | 0 | 
-| 3 | 1 | 
 | 3 | 2 | 
 | 3 | 3 |
 | 4 | 0 |
-| 4 | 1 |
 | 4 | 2 |
 | 4 | 3 |
 | 5 | 0 |
-| 5 | 1 |
 | 5 | 2 |
 
+## Experiments
+## 5 spatial layers + 2 temporal layers
+Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution
+
+| Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
+|:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| 5 | 0 | 116.139 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
+| 5 | 2 | 119.783 | 490.51 | 225.167 | 102.817 | 36.836 | 12.9 |
+| 4 | 0 | 94.933 | | 202.222 | 92.862 | 42.7 | 14.435 |
+| 4 | 2 | 95.124 | | 185.903 | 86.538 | 41.448 | 14.084 |
+| 4 | 3 |  | |  |  |  |  |
