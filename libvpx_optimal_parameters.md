@@ -29,6 +29,7 @@
 Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution
 
 ### Effects of number of spatial and temporal layers on ```Bandwidth``` and ```Encode time```.
+## Device 01
 **Device Specifications**<br>
 Processor:	Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz<br>
 Installed RAM:	16.0 GB (15.8 GB usable)<br>
@@ -52,3 +53,30 @@ Status: High-end device
 | 1 | 1 | 34.601 | |  |  |  | 199.916 |
 | 1 | 2 | 34.206 | |  |  |  | 158.044 |
 | 1 | 3 | 38.408 | |  |  |  | 267.404 |
+
+
+## Device 02
+**Device Specifications**<br>
+Processor:	Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz<br>
+Installed RAM:	16.0 GB (15.8 GB usable)<br>
+GPU: No<br>
+Status: Moderate device
+
+| Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
+|:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| 5 | 0 |  | |  |  |  |  |
+| 5 | 2 |  | |  |  |  |  |
+| 4 | 0 | 195.479 | | 202.222 | 92.862 | 42.7 | 14.435 |
+| 4 | 2 | 187.877 | | 185.903 | 86.538 | 41.448 | 14.084 |
+| 4 | 3 | 159.951 | | 288.83 | 139.087 | 58.351 | 13.539 |
+| 3 | 0 | 132.575 | |  | 197.299 | 86.272 | 34.61 |
+| 3 | 2 | 130.928 | |  | 181.621 | 82.413 | 33.212 |
+| 3 | 3 | 116.951 | |  | 285.261 | 127.452 | 33.672 |
+| 2 | 0 | 92.1 | |  |  | 197.512 | 65.41 |
+| 2 | 2 | 104.981 | |  |  | 180.421 | 63.393 |
+| 2 | 3 | 107.04 | |  |  | 285.696 | 74.809 |
+| 1 | 0 | 140.230 | |  |  |  | 167.404 |
+| 1 | 1 | 110.343 | |  |  |  | 199.916 |
+| 1 | 2 | 76.715 | |  |  |  | 158.044 |
+| 1 | 3 | 122.831 | |  |  |  |  267.404|
+
