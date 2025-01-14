@@ -57,15 +57,15 @@ Status: High-end device
 
 ## Device 02
 **Device Specifications**<br>
-Processor:	Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz<br>
-Installed RAM:	16.0 GB (15.8 GB usable)<br>
+Processor:	Intel(R) Core(TM) i5-2450M CPU @ 2.50GHz   2.50 GHz<br>
+Installed RAM:	8.0 GB (7.82 GB usable)<br>
 GPU: No<br>
 Status: Moderate device
 
 | Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
 |:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| 5 | 0 |  | |  |  |  |  |
-| 5 | 2 |  | |  |  |  |  |
+| 5 | 0 | 221.763 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
+| 5 | 2 | 254.078 | 490.51 | 225.167 | 102.817 | 36.836 | 12.9 |
 | 4 | 0 | 195.479 | | 202.222 | 92.862 | 42.7 | 14.435 |
 | 4 | 2 | 187.877 | | 185.903 | 86.538 | 41.448 | 14.084 |
 | 4 | 3 | 159.951 | | 288.83 | 139.087 | 58.351 | 13.539 |
