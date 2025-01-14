@@ -37,7 +37,7 @@ GPU: Yes (2)<br>
 Number of threads: 8
 Status: High-end device
 
-| Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
+| Spatial layer | Temporal layer | Encode Time | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
 |:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 5 | 0 | 116.139 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
 | 5 | 2 | 119.783 | 490.51 | 225.167 | 102.817 | 36.836 | 12.9 |
@@ -64,7 +64,7 @@ GPU: No<br>
 Number of threads: 4<br>
 Status: Moderate device
 
-| Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
+| Spatial layer | Temporal layer | Encode | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
 |:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 5 | 0 | 221.763 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
 | 5 | 2 | 254.078 | 490.51 | 225.167 | 102.817 | 36.836 | 12.9 |
@@ -82,3 +82,5 @@ Status: Moderate device
 | 1 | 2 | 76.715 | |  |  |  | 158.044 |
 | 1 | 3 | 122.831 | |  |  |  |  267.404|
 
+## Findings
+If spatial layers are increased encode time increases. The effect of increasing encode time is visible in moderate and low-end devices where encode time exceeds 200ms for higher spatial layers.
