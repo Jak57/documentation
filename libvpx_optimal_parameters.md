@@ -34,6 +34,7 @@ Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution
 Processor:	Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz<br>
 Installed RAM:	16.0 GB (15.8 GB usable)<br>
 GPU: Yes (2)<br>
+Number of threads: 8
 Status: High-end device
 
 | Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
@@ -60,6 +61,7 @@ Status: High-end device
 Processor:	Intel(R) Core(TM) i5-2450M CPU @ 2.50GHz   2.50 GHz<br>
 Installed RAM:	8.0 GB (7.82 GB usable)<br>
 GPU: No<br>
+Number of threads: 4<br>
 Status: Moderate device
 
 | Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
