@@ -28,6 +28,13 @@
 ## Experiments
 Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution
 
+### Effects of number of spatial and temporal layers on ```Bandwidth``` and ```Encode time```.
+**Device Specifications**<br>
+Processor:	Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz<br>
+Installed RAM:	16.0 GB (15.8 GB usable)<br>
+GPU: Yes (2)<br>
+Status: High-end device
+
 | Spatial layer | Temporal layer | R4 (ET) | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
 |:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 5 | 0 | 116.139 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
