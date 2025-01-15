@@ -8,25 +8,26 @@
 * Resolution: 1920x1080, 1280x720, 960x540, 640x360, 320x180
 
 | Spatial layers  | Temporal layers  | 
-|:-------------:|:-------------:|
-| 1 | 0 | 
-| 1 | 1 | 
-| 1 | 2 | 
-| 1 | 3 |
-| 2 | 0 |
-| 2 | 2 |
-| 2 | 3 |
-| 3 | 0 | 
-| 3 | 2 | 
-| 3 | 3 |
-| 4 | 0 |
-| 4 | 2 |
-| 4 | 3 |
-| 5 | 0 |
-| 5 | 2 |
+|:---------------:|:----------------:|
+| 1               | 0                | 
+| 1               | 1                | 
+| 1               | 2                | 
+| 1               | 3                |
+| 2               | 0                |
+| 2               | 2                |
+| 2               | 3                |
+| 3               | 0                | 
+| 3               | 2                | 
+| 3               | 3                |
+| 4               | 0                |
+| 4               | 2                |
+| 4               | 3                |
+| 5               | 0                |
+| 5               | 2                |
 
 ## Experiments
-Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution
+Note: BW -> Bandwidth (Kbps), ET -> Encode time (Ms), R -> Resolution.
+Total iteration = 5.
 
 ### Effects of number of spatial and temporal layers on ```Bandwidth``` and ```Encode time```.
 ## Device 01
@@ -38,22 +39,22 @@ Number of threads: 8
 Status: High-end device
 
 | Spatial layer | Temporal layer | Encode Time | R4 (BW) | R3 (BW) | R2 (BW) | R1 (BW) | R0 (BW) |
-|:-------------:|:---------------:|:------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| 5 | 0 | 116.139 | 207.395 | 97.378 | 45.558 | 18.166 | 5.354 |
-| 5 | 2 | 119.783 | 490.51 | 225.167 | 102.817 | 36.836 | 12.9 |
-| 4 | 0 | 94.933 | | 202.222 | 92.862 | 42.7 | 14.435 |
-| 4 | 2 | 95.124 | | 185.903 | 86.538 | 41.448 | 14.084 |
-| 4 | 3 | 79.727 | | 288.83 | 139.087 | 58.351 | 13.539 |
-| 3 | 0 | 62.481 | |  | 197.299 | 86.272 | 34.61 |
-| 3 | 2 | 55.370 | |  | 181.621 | 82.413 | 33.212 |
-| 3 | 3 | 53.577 | |  | 285.261 | 127.452 | 33.672 |
-| 2 | 0 | 50.651 | |  |  | 197.512 | 65.41 |
-| 2 | 2 | 50.054 | |  |  | 180.421 | 63.393 |
-| 2 | 3 | 47.507 | |  |  | 285.696 | 74.809 |
-| 1 | 0 | 27.741 | |  |  |  | 220.384 |
-| 1 | 1 | 34.601 | |  |  |  | 199.916 |
-| 1 | 2 | 34.206 | |  |  |  | 158.044 |
-| 1 | 3 | 38.408 | |  |  |  | 267.404 |
+|:-------------:|:--------------:|:-----------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| 5             | 0              | 116.139     | 207.395 | 97.378  | 45.558  | 18.166 | 5.354    |
+| 5             | 2              | 119.783     | 490.51  | 225.167 | 102.817 | 36.836 | 12.9     |
+| 4             | 0              | 94.933      |         | 202.222 | 92.862  | 42.7   | 14.435   |
+| 4             | 2              | 95.124      |         | 185.903 | 86.538  | 41.448 | 14.084   |
+| 4             | 3              | 79.727      |         | 288.83  | 139.087 | 58.351 | 13.539   |
+| 3             | 0              | 62.481      |         |         | 197.299 | 86.272 | 34.61    |
+| 3             | 2              | 55.370      |         |         | 181.621 | 82.413 | 33.212   |
+| 3             | 3              | 53.577      |         |         | 285.261 | 127.452| 33.672   |
+| 2             | 0              | 50.651      |         |         |         | 197.512| 65.41    |
+| 2             | 2              | 50.054      |         |         |         | 180.421| 63.393   |
+| 2             | 3              | 47.507      |         |         |         | 285.696| 74.809   |
+| 1             | 0              | 27.741      |         |         |         |        | 220.384  |
+| 1             | 1              | 34.601      |         |         |         |        | 199.916  |
+| 1             | 2              | 34.206      |         |         |         |        | 158.044  |
+| 1             | 3              | 38.408      |         |         |         |        | 267.404  |
 
 
 ## Device 02
@@ -110,7 +111,7 @@ Note: The Number of temporal layers is 3.
 
 **Findings:** Increased number of spatial layers results in larger encode time. For the first frame encode time is always larger.
 
-## Encode time analysis for 4 spatial layers and 3 temporal layers for consecutive frames
+## Encode time analysis for different spatial layers and 3 temporal layers for consecutive frames
 * ET -> Encode Time (ms)
   
 | Frame No. | Spatial Layer 1 (ET) | Spatial Layer 2 (ET) | Spatial Layer 3 (ET) | Spatial Layer 4 (ET) |
@@ -139,11 +140,40 @@ Note: The Number of temporal layers is 3.
 
 **Findings:** Encode time for the first frame is always larger compared to the subsequent frames. Increasing the number of spatial layers resulted in increased encode time.
 
+## Encode time analysis for different temporal layers and 3 spatial layers for consecutive frames
+* ET -> Encode Time (ms)
+  
+| Frame No. |  No Temporal layer (ET) | Temporal layer 2 (ET) | Temporal Layer 3 (ET) | 
+|:---------:|:-----------------------:|:---------------------:|:---------------------:|
+| 1         | 117                     | 130                   | 135                   | 
+| 2         | 78                      | 89                    | 65                    | 
+| 3         | 98                      | 96                    | 72                    | 
+| 4         | 79                      | 64                    | 82                    | 
+| 5         | 82                      | 67                    | 63                    | 
+| 6         | 92                      | 93                    | 104                   | 
+| 7         | 75                      | 71                    | 79                    | 
+| 8         | 76                      | 109                   | 65                    |
+| 9         | 82                      | 85                    | 68                    | 
+| 10        | 81                      | 89                    | 73                    | 
+| 11        | 92                      | 89                    | 121                   | 
+| 12        | 66                      | 64                    | 69                    | 
+| 13        | 68                      | 70                    | 254                   | 
+| 14        | 81                      | 63                    | 76                    | 
+| 15        | 79                      | 74                    | 75                    | 
+| 16        | 93                      | 105                   | 109                   | 
+| 17        | 70                      | 62                    | 76                    | 
+| 18        | 79                      | 79                    | 75                    | 
+| 19        | 81                      | 83                    | 72                    | 
+| 20        | 79                      | 71                    | 74                    | 
+| Average   | 82.4                    | 82.65                 | 90.35                 | 
+
+**Findings:** Increasing the number of temporal layers does not result in a significant increase in the encode time.
+
+
 **Prepared by**<br>
 *Jakir Hasan (Reve Systems'24)*<br>
 *Date (creation) - 12/1/25*<br>
 *Date (last modification) - 15/1/25*<br>
-
 
 **Supervised by**<br>
 *Md. Maniruzzaman Monir*<br>
