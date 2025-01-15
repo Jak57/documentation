@@ -139,3 +139,12 @@ Note: The Number of temporal layers is 3.
 
 **Findings:** Encode time for the first frame is always larger compared to the subsequent frames. Increasing the number of spatial layers resulted in increased encode time.
 
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'24)*<br>
+*Date (creation) - 12/1/25*<br>
+*Date (last modification) - 15/1/25*<br>
+
+
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Nafiul Alam Fuji*<br>
