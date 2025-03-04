@@ -106,4 +106,14 @@
 
 ## Useful software
 * Observing memory usage: TreeSize (https://treesize.net/)
-   
+
+
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'25)*<br>
+*Date (creation) - 04/03/25*<br>
+*Date (last modification) - 04/03/25*<br>
+
+
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Nafiul Alam Fuji*<br>
