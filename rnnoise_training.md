@@ -1,23 +1,25 @@
 ## Useful Linux commands
-| **Description**                                                               | **Command**                                                                              |
-|-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| Untar operation                                                               | ``tar -xvzf musan.tar.gz``                                                               |
-| Size of files/directories                                                     | ``du -ah --max-depth=1``                                                                 |
-| Conversion from `.sw` to `.pcm`                                               | ``ffmpeg -f s16le -ar 48000 -ac 1 -i foreground_noise.sw -f s16le foreground_noise.pcm`` |
-| GPU information                                                               | ``nvidia-smi --query-gpu=index,name,memory.free --format=csv,noheader``, ``nvidia-smi``  |
-| Seeing GPU                                                                    | ``echo $CUDA_VISIBLE_DEVICES``                                                           |
-| Setting up GPU                                                                | ``echo $CUDA_VISIBLE_DEVICES=0``                                                         |
-| Creating log file and redirecting stdout & stderr to the log file and console | ``LOGFILE="rnnoise_training.log"``, ``exec > >(tee -a "$LOGFILE") 2>&1``                 |
-| Finding all `.flac` files in a directory and moving them to a new directory   | ``find sentence+word -type f -name "*.flac" -exec mv {} clean_libraries/ \;``            |
-| Finding the number of `.flac` files in a folder                               | ``find sentence+word -type f -name "*.flac" | wc -l``                                    |
-| Removing nested folders                                                       | ``rm -rf folder``                                                                        |
-| Concatenating audio files                                                     | ``cat file1.sw file2.sw file3.sw > output.sw``                                           |
-| Changing the audio format                                                     | ``mv noise.sw noise.pcm``                                                                |
-| Seeing process ID                                                             | ``cat *.pid``                                                                            |
-| Seeing PID tree from parent to child                                          | ``pstree -p <parent_pid>``                                                               |
-| Tailing log information                                                       | ``tail -f logs/*.log``                                                                   |
-| Seeing information of log files                                               | ``cat logs/*.log``                                                                       |
-| Recording time                                                                | ``start_time=$(date +%s)``                                                               |
+| **Description**                                                               | **Command**                                                                                |
+|-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| Untar operation                                                               | ``tar -xvzf musan.tar.gz``                                                                 |
+| Size of files/directories                                                     | ``du -ah --max-depth=1``                                                                   |
+| Conversion from `.sw` to `.pcm`                                               | ``ffmpeg -f s16le -ar 48000 -ac 1 -i foreground_noise.sw -f s16le foreground_noise.pcm``   |
+| GPU information                                                               | ``nvidia-smi --query-gpu=index,name,memory.free --format=csv,noheader``, ``nvidia-smi``    |
+| Seeing GPU                                                                    | ``echo $CUDA_VISIBLE_DEVICES``                                                             |
+| Setting up GPU                                                                | ``echo $CUDA_VISIBLE_DEVICES=0``                                                           |
+| Creating log file and redirecting stdout & stderr to the log file and console | ``LOGFILE="rnnoise_training.log"``, ``exec > >(tee -a "$LOGFILE") 2>&1``                   |
+| Finding all `.flac` files in a directory and moving them to a new directory   | ``find sentence+word -type f -name "*.flac" -exec mv {} clean_libraries/ \;``              |
+| Finding the number of `.flac` files in a folder                               | ``find sentence+word -type f -name "*.flac" | wc -l``                                      |
+| Removing nested folders                                                       | ``rm -rf folder``                                                                          |
+| Concatenating audio files                                                     | ``cat file1.sw file2.sw file3.sw > output.sw``                                             |
+| Changing the audio format                                                     | ``mv noise.sw noise.pcm``                                                                  |
+| Seeing process ID                                                             | ``cat *.pid``                                                                              |
+| Seeing PID tree from parent to child                                          | ``pstree -p <parent_pid>``                                                                 |
+| List child PID and pass on ``htop`` as input                                  | ``htop -p $(pstree -p <parent_pid> | grep -oP '\(\K[0-9]+' | tr '\n' ',' | sed 's/,$//')`` | 
+| Seeing CPU and GPU usage                                                      | ``htop``                                                                                   |
+| Tailing log information                                                       | ``tail -f logs/*.log``                                                                     |
+| Seeing information of log files                                               | ``cat logs/*.log``                                                                         |
+| Recording time                                                                | ``start_time=$(date +%s)``                                                                 |
 
 ## Audio Format
 * ``.pcm``: Pulse Code Modulation is a raw, uncompressed audio format.
