@@ -2,17 +2,17 @@
 
 ## Table of Contents
 1. [Operating System](#operating-system)
-2. [Useful Linux commands](#useful-linux-commands)
+2. [Useful Linux Commands](#useful-linux-commands)
 3. [Audio Format](#audio-format)
 4. [Dataset from Reve Systems](#dataset-from-reve-systems)
-5. [Noise dataset link](#noise-dataset-link)
+5. [Noise Dataset Link](#noise-dataset-link)
 6. [Virtual Environment Creation](#virtual-environment-creation)
-7. [Screen Command](#screen-command)
+7. [Screen Commands](#screen-commands)
 8. [Git Commands](#git-commands)
-9. [Prerequisite libraries for training RNNoise](#prerequisite-libraries-for-training-rnnoise)
-10. [RNNoise training instructions](#rnnoise-training-instructions)
-11. [Resources for training RNNoise](#resources-for-training-rnnoise)
-12. [Useful software](#useful-software)
+9. [Prerequisite Libraries for Training RNNoise](#prerequisite-libraries-for-training-rnnoise)
+10. [RNNoise Training Instructions](#rnnoise-training-instructions)
+11. [Resources for Training RNNoise](#resources-for-training-rnnoise)
+12. [Useful Software](#useful-software)
 
 ---
 
@@ -20,7 +20,7 @@
 ## Operating System
 * Ubuntu (WSL)
 
-## Useful Linux commands
+## Useful Linux Commands
 | **Description**                                                               | **Command**                                                                                |
 |-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | Untar operation                                                               | ``tar -xvzf musan.tar.gz``                                                                 |
@@ -58,7 +58,7 @@
 **Noise**
 * wget --no-check-certificate https://dev.revesoft.com:27183/noise.tar.gz 
   
-## Noise dataset link
+## Noise Dataset Link
 | **Source**                 | **Dataset Link**                                                                                                        |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Microsoft                  | [MS-SNSD](https://github.com/microsoft/MS-SNSD)                                                                         |
@@ -75,7 +75,7 @@
 * ``python3 -m venv rnn_dev`` (Creating python virtual environment)
 * ``source rnn_dev/bin/activate`` (Activating the virtual environment)
 
-## Screen Command
+## Screen Commands
 | **Description**                                   | **Command**                                                |
 |---------------------------------------------------|------------------------------------------------------------|
 | List current attached/detached screen             | ``screen -ls``                                             |
@@ -90,13 +90,13 @@
 * Setting up remote origin: ``git remote set-url origin **url**``
 * Changing to an already existing branch: ``git checkout rnn_train``
 
-## Prerequisite libraries for training RNNoise
+## Prerequisite Libraries for Training RNNoise
 * ``sudo apt-get update``
 * ``sudo apt-get install autoconf automake libtool build-essential``
 * ``pip3 install torch torchvision torchaudio`` (Install PyTorch with GPU support)
 * ``pip3 install tqdm``
 
-## RNNoise training instructions
+## RNNoise Training Instructions
 | **Description**                                                  | **Command**                                                                                                                                         |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cloning the Git repository for RNNoise                           | ``git clone https://github.com/xiph/rnnoise.git``                                                                                                   |
@@ -116,14 +116,14 @@
 | Compiling the library                                            | ``make``                                                                                                                                            |
 | Performing inference                                             | ``./examples/rnnoise_demo input.raw output_new_$epochs.raw``                                                                                        |
 
-## Resources for training RNNoise
+## Resources for Training RNNoise
 * RNNoise wrapper: https://github.com/dbklim/RNNoise_Wrapper
 * Training instructions for RNNoise_Wrapper: https://github.com/dbklim/RNNoise_Wrapper/blob/master/TRAINING.md
 * RNNoise trained on MS-SNSD dataset training statistics visualization: https://github.com/xiph/rnnoise/issues/189
 * Comments for training: https://github.com/xiph/rnnoise/issues/189
   
 
-## Useful software
+## Useful Software
 * Observing memory usage: TreeSize (https://treesize.net/)
 
 
