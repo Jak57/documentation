@@ -14,8 +14,10 @@
 | Concatenating audio files                                                     | ``cat file1.sw file2.sw file3.sw > output.sw``                                           |
 | Changing the audio format                                                     | ``mv noise.sw noise.pcm``                                                                |
 | Seeing process ID                                                             | ``cat *.pid``                                                                            |
+| Seeing PID tree from parent to child                                          | ``pstree -p <parent_pid>``                                                               |
 | Tailing log information                                                       | ``tail -f logs/*.log``                                                                   |
 | Seeing information of log files                                               | ``cat logs/*.log``                                                                       |
+| Recording time                                                                | ``start_time=$(date +%s)``                                                               |
 
 ## Audio Format
 * ``.pcm``: Pulse Code Modulation is a raw, uncompressed audio format.
@@ -98,9 +100,8 @@
 * Training instructions for RNNoise_Wrapper: https://github.com/dbklim/RNNoise_Wrapper/blob/master/TRAINING.md
 * RNNoise trained on MS-SNSD dataset training statistics visualization: https://github.com/xiph/rnnoise/issues/189
 * Comments for training: https://github.com/xiph/rnnoise/issues/189
-* 
+  
 
 ## Useful software
 * Observing memory usage: TreeSize (https://treesize.net/)
-* 
    
