@@ -117,10 +117,10 @@
 | Performing inference                                             | ``./examples/rnnoise_demo input.raw output_new_$epochs.raw``                                                                                        |
 
 ## Resources for Training RNNoise
-* RNNoise wrapper: https://github.com/dbklim/RNNoise_Wrapper
-* Training instructions for RNNoise_Wrapper: https://github.com/dbklim/RNNoise_Wrapper/blob/master/TRAINING.md
-* RNNoise trained on MS-SNSD dataset training statistics visualization: https://github.com/xiph/rnnoise/issues/189
-* Comments for training: https://github.com/xiph/rnnoise/issues/189
+* [RNNoise wrapper](https://github.com/dbklim/RNNoise_Wrapper)
+* [Training instructions for RNNoise_Wrapper](https://github.com/dbklim/RNNoise_Wrapper/blob/master/TRAINING.md)
+* [RNNoise trained on MS-SNSD dataset training statistics visualization](https://github.com/xiph/rnnoise/issues/189)
+* [Comments for training](https://github.com/xiph/rnnoise/issues/189)
   
 
 ## Useful Software
