@@ -1,3 +1,20 @@
+## Table of Contents
+1. [Operating System](#operating-system)
+2. [Useful Linux commands](#useful-linux-commands)
+3. [Audio Format](#audio-format)
+4. [Dataset from Reve Systems](#dataset-from-reve-systems)
+5. [Noise dataset link](#noise-dataset-link)
+6. [Virtual Environment Creation](#virtual-environment-creation)
+7. [Screen Command](#screen-command)
+8. [Git Commands](#git-commands)
+9. [Prerequisite libraries for training RNNoise](#prerequisite-libraries-for-training-rnnoise)
+10. [RNNoise training instructions](#rnnoise-training-instructions)
+11. [Resources for training RNNoise](#resources-for-training-rnnoise)
+12. [Useful software](#useful-software)
+
+---
+
+
 ## Operating System
 * Ubuntu (WSL)
 
