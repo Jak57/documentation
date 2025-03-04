@@ -1,3 +1,6 @@
+## Operating System
+* Ubuntu (WSL)
+
 ## Useful Linux commands
 | **Description**                                                               | **Command**                                                                                |
 |-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
@@ -31,7 +34,7 @@
 * wget --no-check-certificate https://dev.revesoft.com:27183/collect_sentence+word.zip 
 * wget --no-check-certificate https://dev.revesoft.com:27183/create_sentence+word+phoneme.zip 
 * wget --no-check-certificate https://dev.revesoft.com:27183/collect_sentence+word+phoneme.zip
-* Total size: 192GB (48khz, raw/PCM format)
+* Total size of concatenated clean speech: 192GB (48khz, raw/PCM format)
 
 **Noise**
 * wget --no-check-certificate https://dev.revesoft.com:27183/noise.tar.gz 
@@ -68,13 +71,10 @@
 * Setting up remote origin: ``git remote set-url origin **url**``
 * Changing to an already existing branch: ``git checkout rnn_train``
 
-## Operating System
-* Ubuntu (WSL)
-
 ## Prerequisite libraries for training RNNoise
 * ``sudo apt-get update``
 * ``sudo apt-get install autoconf automake libtool build-essential``
-* ``pip3 install torch torchvision torchaudio`` (Install PyTorch with GPU suport)
+* ``pip3 install torch torchvision torchaudio`` (Install PyTorch with GPU support)
 * ``pip3 install tqdm``
 
 ## RNNoise training instructions
