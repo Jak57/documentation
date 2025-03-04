@@ -67,14 +67,6 @@
 | Google                     | [MUSAN](https://www.openslr.org/17/)                                                                                    |
 | Google                     | [RIRS](https://www.openslr.org/28/)                                                                                     |
 
-## Virtual Environment Creation
-* ``apt-get install python3.10-venv`` (Virtual environment)
-* ``cd /mnt/d/``
-* ``mkdir rnn_dev``
-* ``cd rnn_dev``
-* ``python3 -m venv rnn_dev`` (Creating python virtual environment)
-* ``source rnn_dev/bin/activate`` (Activating the virtual environment)
-
 ## Screen Commands
 | **Description**                                   | **Command**                                                |
 |---------------------------------------------------|------------------------------------------------------------|
@@ -84,6 +76,14 @@
 | Exit from a current screen session without saving | ``exit``                                                   |
 | Enter any detached screen session                 | ``screen -r screen_name``                                  |
 | Enter any attached session forcefully             | ``screen -d -r screen_name``                               |
+
+## Virtual Environment Creation
+* ``apt-get install python3.10-venv`` (Virtual environment)
+* ``cd /mnt/d/``
+* ``mkdir rnn_dev``
+* ``cd rnn_dev``
+* ``python3 -m venv rnn_dev`` (Creating python virtual environment)
+* ``source rnn_dev/bin/activate`` (Activating the virtual environment)
 
 ## Git Commands
 * Check remote branch: ``git remote -v``
