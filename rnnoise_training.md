@@ -18,7 +18,7 @@
 
 
 ## Operating System
-* Ubuntu (WSL)
+* All the experiments are carried out in Ubuntu (WSL).
 
 ## Useful Linux Commands
 | **Description**                                                               | **Command**                                                                                |
