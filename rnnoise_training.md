@@ -76,8 +76,8 @@
 | **Description**                                                  | **Command**                                                                                                                                         |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cloning the Git repository for RNNoise                           | ``git clone https://github.com/xiph/rnnoise.git``                                                                                                   |
-| Checking out a specific commit of the repository                 | ``git checkout 130913db902535a19eb477a9f4cdd5c922d63cf2``                                                                                           |
 | Changing directory to the RNNoise project                        | ``cd rnnoise``                                                                                                                                      |
+| Checking out a specific commit of the repository                 | ``git checkout 130913db902535a19eb477a9f4cdd5c922d63cf2``                                                                                           |
 | Generating the `configure` script and preparing the build system | ``./autogen.sh``                                                                                                                                    |
 | Configuring the RNNoise build                                    | ``./configure``                                                                                                                                     |
 | Compiling the RNNoise library                                    | ``make``                                                                                                                                            |
