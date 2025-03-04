@@ -34,12 +34,26 @@
 * Google (MUSAN): https://www.openslr.org/17/
 * Google (RIRS): https://www.openslr.org/28/
 
+## Virtual Environment Creation
+* ``cd /mnt/d/``
+* ``mkdir rnn_dev``
+* ``cd rnn_dev``
+* ``python3 -m venv rnn_dev`` (Creating python virtual environment)
+* ``source rnn_dev/bin/activate`` (Activating the virtual environment)
+
+
+
 ## Git Commands
 * Check remote branch: ``git remote -v``
 * Setting up remote origin: ``git remote set-url origin **url**``
+* Changing to an already existing branch: ``git checkout rnn_train``
+
+## Prerequisite libraries for training RNNoise
+* sudo apt-get update
+* pip3 install torch torchvision torchaudio (Install PyTorch with GPU suport)
 
 ## RNNoise training instructions
-* Cloning the Git repository for RNNoise: ``git clone https://github.com/xiph/rnnoise.git``
+* ``git clone https://github.com/xiph/rnnoise.git`` (Cloning the Git repository for RNNoise)
 * ``cd rnnoise``
 * ``./autogen.sh``
 * ``./configure``
