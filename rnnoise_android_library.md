@@ -17,4 +17,14 @@ Android Studio Meerkat | 2024.3.1
    Build configuration language: Kotlin DSL (build.gradle.kts) [Recommended]
    ```
    Then select ``Next`` -> ``Finish``.
+3. Right-click on the project name ``rnnoise_canceller`` then  select ``New -> Module``.
+4. Provide the following information
+      ```
+   Application/Library name: rnnoise
+   Module name: rnnoise
+   Package name: com.example.rnnoise
+   Language: Java
+   Minimum SDK: API 21 ("Lollipop"; Android 5.0)
+   Build configuration language: Kotlin DSL (build.gradle.kts) [Recommended]
+   ```
 
