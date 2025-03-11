@@ -148,7 +148,19 @@ Android Studio Meerkat | 2024.3.1
     * ``Device Explorer -> sdcard -> Android -> data -> com.example.rnnoise_canceller -> files -> processed_audio.raw``
          
 
-10. =========================================================================================================================
-11. 
+---
+
+
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'25)*<br>
+*Date (creation) - 10/03/25*<br>
+*Date (last modification) - 11/03/25*<br>
+
+
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Dhiman Paul*<br>
+*Md. Atikul Hassan Auve*<br>
+
    
 
