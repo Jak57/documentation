@@ -94,11 +94,18 @@ Android Studio Meerkat | 2024.3.1
         }
     }
     ```
-14. Enter the following commands into the command line for building the shared object (.so) files.
+14. In the following folder ``rnnoise_canceller\rnnoise\src\main\java`` place the specified files in the provided locations.
+    * ``com\reve\audio\libraries\dlls\audio_filters\rnnoise\RNNoise.java``
+    * ``com\reve\util\ShortArrayUtil.java``
+    * ``com\reve\test\RNNoiseTest.java``
+15. Create a ``assets`` folder and place the model file. ``(Right-click on main -> New -> Folder -> Assets Folder)``
+   * ``rnnoise_canceller\rnnoise\src\main\assets\weights_blob_v1.bin``
+16. Enter the following commands into the command line for building the shared object (.so) files.
    * ``./gradlew clean``
    * ``./gradlew build``
 
-
+     
+         
 
 10. =========================================================================================================================
 11. 
