@@ -103,8 +103,49 @@ Android Studio Meerkat | 2024.3.1
 16. Enter the following commands into the command line for building the shared object (.so) files.
    * ``./gradlew clean``
    * ``./gradlew build``
-
-     
+17. Create another ``assets`` folder and place a sample audio file in the provided location.
+   * ``rnnoise_canceller\app\src\main\assets\sample_48k.raw``
+18. Place the ``Test`` file for checking performance of the RNNoise canceller in the following location.
+   * ``rnnoise_canceller\app\src\main\java\com\example\rnnoise\Test.java``
+19. Add the following code into MainActivity.java and run the app.
+   ```
+   package com.example.rnnoise_canceller;
+   
+   import androidx.appcompat.app.AppCompatActivity;
+   
+   import android.content.Context;
+   import android.os.Bundle;
+   import android.widget.TextView;
+   
+   import com.example.rnnoise_canceller.databinding.ActivityMainBinding;
+   
+   public class MainActivity extends AppCompatActivity {
+       private ActivityMainBinding binding;
+   
+       @Override
+       protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+   
+           binding = ActivityMainBinding.inflate(getLayoutInflater());
+           setContentView(binding.getRoot());
+   
+           Context context = this;
+           Test test = new Test(context, "sample_48k.raw");
+           test.applyTest();
+   
+           TextView tv = binding.sampleText;
+           tv.setText("RNNoise for Android testing done.");
+       }
+   
+       /**
+        * A native method that is implemented by the 'rnnoise_canceller' native library,
+        * which is packaged with this application.
+        */
+   }
+   ```
+  * Note: Modify sample rate based on your audio file in the Test.java class.
+20. The processed audio file will be generated in the following location.
+    * ``Device Explorer -> sdcard -> Android -> data -> com.example.rnnoise_canceller -> files -> processed_audio.raw``
          
 
 10. =========================================================================================================================
