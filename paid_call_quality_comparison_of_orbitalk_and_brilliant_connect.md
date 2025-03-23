@@ -51,22 +51,38 @@ The experimental results are provided in the following table:
 
 | Participant | Call Number | Orbitalk (Rating) | Brilliant Connect (Rating) |
 |:-----------:|:-----------:|:-----------------:|:--------------------------:|
-| Fuji | 1 | 3.5 | 2.5 | 
-| Fuji | 2 | 3.5 | 3.75 | 
-| Fuji | 3 | 2.5 | 3.5 | 
-| Mahin | 1 | 4 | 3.5 | 
-| Mahin | 2 | 4.5 | 4.8 | 
-| Shoriful | 1 | 3 | 3.5 | 
-| Shoriful | 2 | 3 | 3 | 
-| Atik | 1 | 4 | 3.5 | 
-| Atik | 2 | 4 | 4 | 
-| Fuji | 1 | 3.5 | 2.5 | 
-| Fuji | 2 | 3.5 | 2.5 | 
-| Fuji | 1 | 3.5 | 2.5 | 
-| Fuji | 2 | 3.5 | 2.5 | 
+| Fuji        | 1           | 3.5               | 2.5                        | 
+| Fuji        | 2           | 3.5               | 3.75                       | 
+| Fuji        | 3           | 2.5               | 3.5                        | 
+| Mahin       | 1           | 4                 | 3.5                        | 
+| Mahin       | 2           | 4.5               | 4.8                        | 
+| Shoriful    | 1           | 3                 | 3.5                        | 
+| Shoriful    | 2           | 3                 | 3                          | 
+| Atik        | 1           | 4                 | 3.5                        | 
+| Atik        | 2           | 4                 | 4                          | 
+| Ahad        | 1           | 3.5               | 4                          | 
+| Ahad        | 2           | 3.5               | 4                          | 
+| Sourav      | 1           | 4                 | 3.5                        | 
+| Sourav      | 2           | 3                 | 3.5                        | 
+| MOS Score   |             | 3.54              | 3.61                       |
 
 
+**Finding**: From the table, it is evident that the MOS score for Orbitalk and Brilliant Connect is very close.
 
 
+**Prepared by**<br>
+*Jakir Hasan (Reve Systems'25)*<br>
+*Date (creation) - 23/03/25*<br>
+*Date (last modification) - 23/03/25*<br>
 
+**Supervised by**<br>
+*Md. Maniruzzaman Monir*<br>
+*Dhiman Paul*<br>
 
+**Special Thanks**<br>
+*Md. Nafiul Alam Fuji*<br>
+*Md. Atikul Hassan*<br>
+*Sourav Das*<br>
+*Shoriful Isam*<br>
+*Md. Ahad*<br>
+*S.M. Mostavi Mashkur Mahin*<br>
