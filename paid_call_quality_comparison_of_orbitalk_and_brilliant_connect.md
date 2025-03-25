@@ -46,6 +46,9 @@ In the Orbitalk app the following processing is carried out after capturing audi
 3. RNNoise Canceller
 4. Comfort Noise Generation (CNG)
 
+## Metric
+**Mean Opinion Score (MOS)**: For measuring the audio quality of calls, MOS is a well-established score. Which ranges from 1 to 5, where 1 represents the worst quality and 5 represents excellent audio quality. MOS score can be a fractional number. 
+
 ## Experimental Results
 The experimental results are provided in the following table:
 
@@ -67,13 +70,40 @@ The experimental results are provided in the following table:
 | MOS Score   |             | 3.54              | 3.61                       |
 
 
-**Finding**: From the table, it is evident that the MOS score for Orbitalk and Brilliant Connect is very close.
+**Finding**:<br>
+From the table, it is evident that the MOS score for Orbitalk and Brilliant Connect is very close. This highlights that both apps performed similar types of processing after capturing the audio from the microphone. The performance of Brilliant Connect is slightly higher than that of Orbitalk, which can be caused due to the audio-capturing library used and the increased quality of captured audio data. 
 
+
+## GSM to App call (Orbitalk, Brilliant Connect) Quality Comparison
+
+**Background**:<br>
+When a call is established from the Orbitalk/Brilliant Connect app to the GSM user, he/she receives the processed audio from the app user. This processing includes noise suppression (NS), acoustic echo cancellation (AEC), acoustic gain control (AGC), dynamic range compression (DRC), comfort noise generation (CNG), and other audio filtering techniques for enhancing the perceptual qualities of audio calls.
+
+However, when the user from the app side hears a voice from the GSM user, in an ideal scenario no additional audio filtering should present except only those performed by the system by default. But, there is a possibility that additional audio filtering may be carried out by the app after receiving the GSM call audio. In this experiment, we tried to figure out whether additional filtering is applied in the Brilliant Connect app to the GSM call.
+
+
+**Goal**:<br> 
+Compare the audio quality from the app side to GSM calls focusing on Orbitalk and Brilliant Connect apps.
+
+**Experimental Setup:**<br>
+For this experiment, two devices are needed. One device must have both Brilliant Connect and the Orbitalk app installed and the other device will initiate GSM call. The GSM user will speak with the app user and the app user will observe the audio quality on his/her side.
+
+These observations of audio quality will be performed by both Brilliant Connect and the Orbitalk app for performance comparison. After the calls, the app users will share his/her feedback on the audio quality of these calls.
+
+In our experiment total of 6 participants were involved and on average 4 calls were conducted.
+
+
+**Findings**:<br>
+Based on feedback from participants whether there is any noticeable difference in the app side for Orbitalk and Brilliant Connect, reveals that the perceptual experience of the GSM call received from the app side is quite similar. This similarity of perceptual quality suggests that further processing on the GSM call is not carried out on the app side (Orbitalk and Brilliant Connect).
+
+**Play Store Links of Apps**<br>
+* [OrbiTalk- ROL Calling & IM APP](https://play.google.com/store/apps/details?id=com.orbitalk.app&hl=en)
+* [Brilliant Connect](https://play.google.com/store/apps/details?id=com.brilliant.connect.com.bd&hl=en) 
 
 **Prepared by**<br>
 *Jakir Hasan (Reve Systems'25)*<br>
 *Date (creation) - 23/03/25*<br>
-*Date (last modification) - 23/03/25*<br>
+*Date (last modification) - 24/03/25*<br>
 
 **Supervised by**<br>
 *Md. Maniruzzaman Monir*<br>
