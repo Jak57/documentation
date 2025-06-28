@@ -4,7 +4,7 @@
 [Audio Mixing](https://github.com/Jak57/documentation/blob/main/AudioMixing.md)
 
 **WebRTC**<br>
-[WebRTC Acoustic Echo Cancellation (AEC)](./WebRTC-Acoustic-Echo-Cancellation)<br>
+[WebRTC Acoustic Echo Cancellation (AEC)](https://github.com/Jak57/documentation/blob/main/webrtc_aec.md)<br>
 [WebRTC Acoustic Gain Control2 (AGC2)](https://github.com/Jak57/documentation/blob/main/WebrtcAGC2.md)<br>
 
 **Noise Canceller**<br>
