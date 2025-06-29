@@ -627,6 +627,9 @@ public class TestDredThreeLoss {
 
 **Note**<br>
 If we use the Opus codec with DRED, then it is not recommended to use FEC. Rather, for recovering a single lost packet, call the DRED decoder with a packet loss count of 1. 
+
+Also, check that the packet loss count does not exceed the number of packets for 1 second of duration, as DRED can recover 1 second of audio data only.
+
 </article>
 
 ## Resources
